@@ -6,8 +6,43 @@ header {
     background-color: #116466;
 }
 
-header .page-title {
-    padding-left: 10px;
+.title-content {
+    padding-left: 15px;
+    width: 70%;
+    float: left;
+}
+
+.social-links {
+    width: 25%;
+    padding-top: 15px;
+    padding-right: 15px;
+    float: right;
+    text-align: right; 
+}
+
+.social-links a {
+    margin-top: 7px;
+}
+
+.fa {
+    padding: 10px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-github {
+    background: #4078c0;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
 }
 
 .nav-bar {
@@ -63,7 +98,7 @@ header .page-title {
 }
 
 .project-list a:hover {
-    background-color: #dddddd;
+    background-color: #116466;
 }
 
 .project-drop:hover .project-list {
@@ -76,10 +111,6 @@ html, body {
     margin: 0;
 }
 
-.wrapper {
-    min-height: 100%;
-}
-
 .content {
     padding-top: 150px;
     padding-left: 20px;
@@ -88,46 +119,12 @@ html, body {
     color:#d1e8e2;
 }
 
-.footer {
-    background-color: #0d4647;
-    height: 50px;
-    margin-top: -50px;
+.clear {
+    clear:both
 }
 
-.social-links {
-    background-color: #116466;
-    width: 150px;
-    height: 50px;
-    flex-wrap: wrap;
-    align-content: center;
-    right: 0px;
-    bottom: 0px;
-    z-index: 1;
-}
-
-.social-links a {
-    margin-top: 7px;
-}
-
-.fa {
-    padding: 10px;
-    width: 20px;
-    text-align: center;
-    text-decoration: none;
-}
-
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-github {
-    background: #4078c0;
-    color: white;
-}
-
-.fa-linkedin {
-    background: #007bb5;
-    color: white;
+html * {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 color-scheme {

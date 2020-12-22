@@ -119,6 +119,45 @@ html, body {
     color:#d1e8e2;
 }
 
+.content h2 {
+    font-size: 40px;
+}
+
+.content h3 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.content h4 {
+    font-size: 20px;
+}
+
+.content p {
+    font-size: 16px;
+}
+
+.tech-title {
+    margin-bottom: 0px;
+}
+
+.con-tech .tech-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.con-tech .tech-list li {
+    margin: 10px;
+} 
+
+.con-tech .tech-list li img {
+    height: 64px;
+    width: 64px;
+}
+
 .clear {
     clear:both
 }

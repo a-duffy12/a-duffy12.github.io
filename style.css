@@ -112,28 +112,69 @@ html, body {
 }
 
 .content {
-    padding-top: 150px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 50px;
+    padding-top: 93px;
+    width: 100%;
     color:#d1e8e2;
 }
 
 .content h2 {
     font-size: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    text-shadow: /* give the text an outline */
+		-1px -1px 0 #000000,
+		1px -1px 0 #000000,
+		-1px 1px 0 #000000,
+		1px 1px 0 #000000;
 }
 
 .content h3 {
     font-size: 32px;
+    padding-left: 50px;
+    padding-right: 50px;
     text-align: center;
 }
 
 .content h4 {
     font-size: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    text-shadow: /* give the text an outline */
+		-1px -1px 0 #000000,
+		1px -1px 0 #000000,
+		-1px 1px 0 #000000,
+		1px 1px 0 #000000;
 }
 
 .content p {
     font-size: 16px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.con-title {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#con-title-ss {
+    background-image: url("images/backgrounds/ss.png");
+}
+
+#con-title-am {
+    background-image: url("images/backgrounds/am.png");
+}
+
+#con-title-gc {
+    background-image: url("images/backgrounds/gc.png");
+}
+
+#con-title-sc {
+    background-image: url("images/backgrounds/sc.png");
 }
 
 .tech-title {

@@ -221,6 +221,10 @@ html, body {
     background-image: url("images/ss/sample.png");
 }
 
+#gc-menu {
+    background-image: url("images/gc/menu.png");
+}
+
 .con-table {
     padding: 5% 0;
     margin-bottom: 40px;
@@ -234,12 +238,13 @@ html, body {
 }
 
 .con-table th {
-    font-size: 2vw;
+    padding: 0.75vw 0.75vw;
+    font-size: 1.5vw;
 }
 
 .con-table td {
-    padding: 1vw 1vw;
-    font-size: 2vw;
+    padding: 0.75vw 0.75vw;
+    font-size: 1.5vw;
 }
 
 .con-down {
@@ -255,6 +260,8 @@ html, body {
 
 #gc-down {
     background-image: url("images/downloads/gc.png");
+    padding-top: 45px;
+    padding-bottom: 45px;
 }
 
 .con-down a {

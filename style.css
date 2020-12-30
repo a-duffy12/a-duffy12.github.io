@@ -190,7 +190,8 @@ html, body {
     background-size: contain;
     width: 1920;
     height: 1080;
-    padding-top: 36%;
+    padding-top: 33%;
+    padding-bottom: 3%;
     margin-bottom: 40px;
 }
 
@@ -201,11 +202,66 @@ html, body {
 
 .con-text p {
     margin: 0 auto;
-    width: 85%;
+    max-width: 85%;
 }    
 
 #ss-menu {
     background-image: url("images/ss/menu.png");
+}
+
+#ss-levels {
+    background-image: url("images/ss/levels.png");
+}
+
+#ss-features {
+    background-image: url("images/ss/features.png");
+}
+
+#ss-sample {
+    background-image: url("images/ss/sample.png");
+}
+
+.con-table {
+    padding: 5% 0;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.con-table table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+.con-table th {
+    font-size: 2vw;
+}
+
+.con-table td {
+    padding: 1vw 1vw;
+    font-size: 2vw;
+}
+
+.con-down {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#ss-down {
+    background-image: url("images/downloads/ss.png");
+}
+
+#gc-down {
+    background-image: url("images/downloads/gc.png");
+}
+
+.con-down a {
+    color: #d1e8e2;
+    text-decoration: none;
+    background-color: #116466;
+    padding: 15px 20px;
 }
 
 .clear {

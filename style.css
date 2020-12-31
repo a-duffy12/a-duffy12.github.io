@@ -192,7 +192,7 @@ html, body {
     height: 1080;
     padding-top: 33%;
     padding-bottom: 3%;
-    margin-bottom: 40px;
+    margin-bottom: 2%;
 }
 
 .con-text {
@@ -223,6 +223,26 @@ html, body {
 
 #gc-menu {
     background-image: url("images/gc/menu.png");
+}
+
+#gc-combat {
+    background-image: url("images/gc/combat.png");
+}
+
+#gc-enemies {
+    background-image: url("images/gc/enemies.png");
+}
+
+#gc-abilities {
+    background-image: url("images/gc/abilities.png");
+}
+
+#gc-upgrades {
+    background-image: url("images/gc/upgrades.png");
+}
+
+#gc-boss {
+    background-image: url("images/gc/boss.png");
 }
 
 .con-table {

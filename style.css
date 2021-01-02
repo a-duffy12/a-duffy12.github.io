@@ -304,6 +304,10 @@ html, body {
     padding-bottom: 45px;
 }
 
+#sc-down {
+    background-image: url("images/downloads/sc.png");
+}
+
 .con-down a {
     color: #d1e8e2;
     text-decoration: none;

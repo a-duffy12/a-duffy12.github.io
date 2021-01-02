@@ -295,11 +295,11 @@ html, body {
 }
 
 #ss-down {
-    background-image: url("images/downloads/ss-test.png");
+    background-image: url("images/downloads/ss.png");
 }
 
 #gc-down {
-    background-image: url("images/downloads/gc-test.png");
+    background-image: url("images/downloads/gc.png");
     padding-top: 45px;
     padding-bottom: 45px;
 }

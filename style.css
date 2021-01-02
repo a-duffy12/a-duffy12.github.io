@@ -245,6 +245,26 @@ html, body {
     background-image: url("images/gc/boss.png");
 }
 
+#sc-login {
+    background-image: url("images/sc/login.png");
+}
+
+#sc-search {
+    background-image: url("images/sc/search.png");
+}
+
+#sc-schedule {
+    background-image: url("images/sc/schedule.png");
+}
+
+#sc-timetable {
+    background-image: url("images/sc/timetable.png");
+}
+
+#sc-admin {
+    background-image: url("images/sc/admin.png");
+}
+
 .con-table {
     padding: 5% 0;
     margin-bottom: 40px;
@@ -275,11 +295,11 @@ html, body {
 }
 
 #ss-down {
-    background-image: url("images/downloads/ss.png");
+    background-image: url("images/downloads/ss-test.png");
 }
 
 #gc-down {
-    background-image: url("images/downloads/gc.png");
+    background-image: url("images/downloads/gc-test.png");
     padding-top: 45px;
     padding-bottom: 45px;
 }

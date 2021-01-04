@@ -265,6 +265,22 @@ html, body {
     background-image: url("images/sc/admin.png");
 }
 
+#am-ore {
+    background-image: url("images/am/ore.png");
+}
+
+#am-amber {
+    background-image: url("images/am/amber.png");
+}
+
+#am-obsidian {
+    background-image: url("images/am/obsidian.png");
+}
+
+#am-bone {
+    background-image: url("images/am/bone.png");
+}
+
 .con-table {
     padding: 5% 0;
     margin-bottom: 40px;
@@ -306,6 +322,10 @@ html, body {
 
 #sc-down {
     background-image: url("images/downloads/sc.png");
+}
+
+#am-down {
+    background-image: url("images/downloads/am.png");
 }
 
 .con-down a {

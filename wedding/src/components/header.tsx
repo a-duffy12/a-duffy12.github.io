@@ -1,7 +1,12 @@
-import styles from './wedding.module.css';
+import styles from '../wedding.module.css'
 
 export const Header = () => {
 
-    return 
-    <></>;
+    return (
+        <>
+            <div className={styles.header}>
+            
+            </div>
+        </>
+    )
 }

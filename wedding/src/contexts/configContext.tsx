@@ -2,17 +2,20 @@ import { createContext, ReactNode, useContext, useState } from 'react';
 import { configInitialState } from '../constants';
 import { Config } from '../types';
 import { useRsvp } from '../hooks/useRSVP';
+import { useMobile } from '../hooks/useMobile';
 
 interface ConfigContextType {
     config: Config,
-    rsvpSubmitted: () => boolean,
-    setRsvpSubmitted: (rsvpStatus: boolean) => void
+    rsvpSubmitted: boolean,
+    setRsvpSubmitted: (rsvpStatus: boolean) => void,
+    isMobile: boolean
 }
 
 const ConfigContext = createContext<ConfigContextType>({
     config: configInitialState,
-    rsvpSubmitted: () => false,
-    setRsvpSubmitted: (rsvpStatus: boolean) => {}
+    rsvpSubmitted: localStorage.getItem('rsvp') === 'true',
+    setRsvpSubmitted: (rsvpStatus: boolean) => {},
+    isMobile: window.innerWidth <= 768
 });
 
 interface ConfigProviderProps {
@@ -21,18 +24,11 @@ interface ConfigProviderProps {
 
 export const ConfigProvider = ({ children }: ConfigProviderProps) => {
     const config = configInitialState;
-    const { rsvp, setRsvp } = useRsvp();
-
-    const rsvpSubmitted = () => {
-        return rsvp;
-    }
-
-    const setRsvpSubmitted = (rsvpStatus: boolean) => {
-        setRsvp(rsvpStatus);
-    }
+    const { rsvpSubmitted, setRsvpSubmitted } = useRsvp();
+    const { isMobile } = useMobile();
 
     return (
-        <ConfigContext.Provider value={{ config, rsvpSubmitted, setRsvpSubmitted }}>
+        <ConfigContext.Provider value={{ config, rsvpSubmitted, setRsvpSubmitted, isMobile }}>
             {children}
         </ConfigContext.Provider>
     );

@@ -1,7 +1,9 @@
 export type Config = {
     savetheDateEnabled: boolean;
     contactUsEnabled: boolean;
-    transportationAndLodgingEnabled: boolean;
+    faqEnabled: boolean;
+    transportationEnabled: boolean;
+    lodgingEnabled: boolean;
     registryEnabled: boolean;
     weddingPartyEnabled: boolean;
     rsvpEnabled: boolean;

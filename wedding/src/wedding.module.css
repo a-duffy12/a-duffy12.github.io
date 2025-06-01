@@ -7,8 +7,22 @@
   --theme_white: #efefef;
 }
 
-.header {
-  height: 160px;
-  width: 100%;
-  background-color: var(--theme_blue);
+.wedding {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--theme_black);
+
+  .weddingHeader {
+    height: 120px;
+    width: 100%;
+    background-color: var(--theme_blue);
+  }
+
+  .tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+  }
 }
+

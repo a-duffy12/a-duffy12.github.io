@@ -4,8 +4,8 @@ import styles from './wedding.module.css';
 export const Wedding = () => {
   
   return (
-    <>Brooklyn and Aiden - 2026 Wedding
+    <div className={styles.wedding}>
       <Header />
-    </>
-  )
+    </div>
+  );
 }

@@ -2,9 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Wedding } from './wedding'
 import './index.css'
+import { ConfigProvider } from './contexts/configContext'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Wedding />
+    <ConfigProvider>
+      <Wedding />
+    </ConfigProvider>
   </React.StrictMode>,
 )

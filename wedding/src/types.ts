@@ -9,3 +9,10 @@ export type Config = {
     rsvpEnabled: boolean;
     photoGalleryEnabled: boolean;
 }
+
+export type Tab = {
+    id: string,
+    label: string,
+    icon: string,
+    enabled: boolean
+}

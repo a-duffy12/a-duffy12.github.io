@@ -1,6 +1,6 @@
 :root {
   --theme_blue: #5abce0;
-  --theme_blue_accent: #297996;
+  --theme_blue_accent: #2d6bc7;
   --theme_yellow: #f2e696;
   --theme_yellow_accent: #dbc848;
   --theme_black: #121212;
@@ -13,16 +13,46 @@
   background-color: var(--theme_black);
 
   .weddingHeader {
-    height: 120px;
+    height: 100px;
     width: 100%;
     background-color: var(--theme_blue);
   }
 
   .tabs {
+    background-color: var(--theme_blue);
     display: flex;
     flex-direction: row;
     gap: 0;
     align-items: center;
+    border: var(--theme_black) 2px solid;
+    height: 40px;
+    width: 100%;
+    overflow-x: hidden;
+
+    .tabButton {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+      border-right: var(--theme_blue_accent) 2px solid;
+      height: 32px;
+      width: fit-content;
+      padding: 4px;
+    }
+
+    .tabButtonActive {
+      background-color: var(--theme_blue_accent);
+    }
+
+    .tabButtonIcon {
+        height: 24px;
+        width: 24px;
+      }
+
+      .tabButtonLabel {
+        height: 24px;
+        width: 60px;
+      }
   }
 }
 

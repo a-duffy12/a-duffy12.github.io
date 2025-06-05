@@ -1,5 +1,8 @@
+import { IconType } from 'react-icons';
+
 export type Config = {
     savetheDateEnabled: boolean;
+    aboutEnabled: boolean;
     contactUsEnabled: boolean;
     faqEnabled: boolean;
     transportationEnabled: boolean;
@@ -13,6 +16,6 @@ export type Config = {
 export type Tab = {
     id: string,
     label: string,
-    icon: string,
+    icon: IconType | null,
     enabled: boolean
 }

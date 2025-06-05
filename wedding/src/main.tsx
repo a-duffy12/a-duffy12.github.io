@@ -7,7 +7,7 @@ import { ConfigProvider } from './contexts/configContext'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ConfigProvider>
-      <Wedding />
+        <Wedding />
     </ConfigProvider>
   </React.StrictMode>,
 )

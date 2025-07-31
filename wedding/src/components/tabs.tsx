@@ -4,6 +4,7 @@ import { Tab } from '../types';
 import styles from '../wedding.module.css';
 import { TabButton } from './tabButton';
 import { FaBed, FaCalendarCheck, FaCamera, FaEnvelope, FaGift, FaHome, FaQuestionCircle, FaUserTie } from 'react-icons/fa';
+import { SaveTheDateTab } from './tabContents/saveTheDateTab';
 
 export const Tabs = () => {
     const { config, isMobile } = useConfig();
@@ -11,7 +12,7 @@ export const Tabs = () => {
 
     const tabs: Tab[] = [
         {
-            id: 'home',
+            id: 'save-the-date',
             label: 'Home',
             icon: FaHome,
             enabled: config.savetheDateEnabled
@@ -63,7 +64,7 @@ export const Tabs = () => {
     const page = useMemo(() => {
         switch (activeTab) {
             case 'save-the-date':
-                return <>save the date</>
+                return <SaveTheDateTab/>
             case 'contact-us':
                 <>{'contact us'}</>
             case 'faq':

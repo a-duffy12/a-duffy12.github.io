@@ -13,9 +13,9 @@ export const TabButton = ({ label, active, icon: Icon, onClick }: TabButtonProps
     const { isMobile } = useConfig();
 
     return (
-        <div className={`${styles.tabButton} ${active ? styles.tabButtonActive : ''}`} onClick={onClick} role='button'>
+        <div className={`${styles.tabButton} ${active ? styles.tabButtonActive : ''}`} onClick={onClick} role='button' aria-label={label}>
             <div className={styles.tabButtonIcon}>
-                {Icon && <Icon size={24} color="#dbc848"/>}
+                {Icon && <Icon size={24} color="#cb8e00"/>}
             </div>
             {!isMobile && 
             <div className={styles.tabButtonLabel}>

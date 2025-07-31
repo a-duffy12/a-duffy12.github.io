@@ -22,7 +22,7 @@ export const useMobile = () => {
     }, []);
     
     const isMobile = useMemo(() => {
-        return windowWidth <= 768;
+        return windowWidth <= 920;
     }, [ windowWidth ]);
 
     return {

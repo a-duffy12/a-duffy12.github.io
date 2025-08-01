@@ -6,6 +6,8 @@
   --theme_yellow_accent: #cb8e00;
   --theme_black: #121212;
   --theme_white: #efefef;
+  --theme_light_blue: #a5aeff;
+  --theme_honey: #d29d3c;
 }
 
 .wedding {
@@ -64,20 +66,22 @@
   .content {
     display: flex;
     padding: 8px;
-    margin: 16px;
+    margin: 16px 24px;
     background-color: var(--theme_yellow);
     border: var(--theme_black) 2px solid;
     border-radius: 8px;
 
-    .contentDesktop {
-      max-width: 1720px;
-      max-height: fit-content;
-    }
+    
+  }
 
-    .contentMobile {
-      max-width: 720px;
-      max-height: fit-content;
-    }
+  .contentDesktop {
+    max-width: 1720px;
+    max-height: fit-content;
+  }
+
+  .contentMobile {
+    max-width: 720px;
+    max-height: fit-content;
   }
 }
 

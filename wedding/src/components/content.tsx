@@ -8,10 +8,10 @@ interface IContentProps {
 
 export const Content = ({children}: IContentProps) => {
     const { isMobile } = useConfig();
-    const style = useMemo(() => isMobile ? styles.contentMobile : styles.contentDesktop, [isMobile]);
+    const widthStyle = useMemo(() => isMobile ? styles.contentMobile : styles.contentDesktop, [isMobile]);
 
     return (
-        <div className={`${styles.content} ${style}`}>
+        <div className={`${styles.content} ${widthStyle}`}>
             {children}
         </div>
     );

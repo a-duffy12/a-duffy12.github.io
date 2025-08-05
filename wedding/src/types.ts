@@ -2,7 +2,7 @@ import { IconType } from 'react-icons';
 
 export type Config = {
     savetheDateEnabled: boolean;
-    aboutEnabled: boolean;
+    //aboutEnabled: boolean;
     contactUsEnabled: boolean;
     faqEnabled: boolean;
     transportationEnabled: boolean;

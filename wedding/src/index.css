@@ -38,26 +38,38 @@ html,body {
 }
 
 h1 {
-
+  font-family: 'Alice', serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 36px;
 }
 
 h2 {
-
+  font-family: 'Alice', serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 28px;
 }
 
 h3 {
-
+  font-family: 'Alice', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 p {
-
+  font-family: 'Alice', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 18px;
 }
 
-/*h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/*
 button {
   border-radius: 8px;
   border: 1px solid transparent;

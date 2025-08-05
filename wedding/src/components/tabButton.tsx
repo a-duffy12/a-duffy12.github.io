@@ -15,7 +15,7 @@ export const TabButton = ({ label, active, icon: Icon, onClick }: TabButtonProps
     return (
         <div className={`${styles.tabButton} ${active ? styles.tabButtonActive : ''}`} onClick={onClick} role='button' aria-label={label}>
             <div className={styles.tabButtonIcon}>
-                {Icon && <Icon size={24} color="#cb8e00"/>}
+                {Icon && <Icon size={24} color="#d19600"/>}
             </div>
             {!isMobile && 
             <div className={styles.tabButtonLabel}>

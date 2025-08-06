@@ -78,8 +78,8 @@ export const Tabs = () => {
     return (
         <div>
             <div className={styles.tabs}>
-                {tabs.filter(tab => tab.enabled).map(tab => (
-                    <TabButton key={tab.id} label={tab.label} active={activeTab === tab.id} icon={tab.icon} onClick={() => setActiveTab(tab.id)} />
+                {tabs.filter(tab => tab.enabled).map((tab, index) => (
+                    <TabButton key={tab.id} label={tab.label} active={activeTab === tab.id} icon={tab.icon} onClick={() => setActiveTab(tab.id)} isFirst={index === 0} />
                 ))}
             </div>
             {page}

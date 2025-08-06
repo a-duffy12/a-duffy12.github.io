@@ -7,13 +7,14 @@ interface TabButtonProps {
     active: boolean;
     icon: IconType | null;
     onClick: () => void;
+    isFirst: boolean;
 }
 
-export const TabButton = ({ label, active, icon: Icon, onClick }: TabButtonProps) => {
+export const TabButton = ({ label, active, icon: Icon, onClick, isFirst }: TabButtonProps) => {
     const { isMobile } = useConfig();
 
     return (
-        <div className={`${styles.tabButton} ${active ? styles.tabButtonActive : ''}`} onClick={onClick} role='button' aria-label={label}>
+        <div className={`${styles.tabButton} ${active ? styles.tabButtonActive : ''} ${isFirst ? styles.tabButtonFirst : ''}`} onClick={onClick} role='button' aria-label={label}>
             <div className={styles.tabButtonIcon}>
                 {Icon && <Icon size={24} color="#d19600"/>}
             </div>

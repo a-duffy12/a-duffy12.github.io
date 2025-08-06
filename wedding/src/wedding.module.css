@@ -59,6 +59,10 @@
       background-color: var(--theme_blue_accent);
     }
 
+    .tabButtonFirst {
+      border-left: var(--theme_blue_accent) 2px solid;
+    }
+
     .tabButtonIcon {
         height: 24px;
         width: 24px;

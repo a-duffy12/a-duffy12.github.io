@@ -5,9 +5,16 @@ import styles from '../wedding.module.css';
 import { TabButton } from './tabButton';
 import { FaBed, FaCalendarCheck, FaCamera, FaEnvelope, FaGift, FaHome, FaQuestionCircle, FaUserTie } from 'react-icons/fa';
 import { SaveTheDateTab } from './tabContents/saveTheDateTab';
+import { ContactUsTab } from './tabContents/contactUsTab';
+import { FaqTab } from './tabContents/faqTab';
+import { RsvpTab } from './tabContents/rsvpTab';
+import { AccomodationsTab } from './tabContents/accomodationsTab';
+import { RegistryTab } from './tabContents/registryTab';
+import { PartyTab } from './tabContents/partyTab';
+import { GalleryTab } from './tabContents/galleryTab';
 
 export const Tabs = () => {
-    const { config, isMobile } = useConfig();
+    const { config } = useConfig();
     const [ activeTab, setActiveTab ] = useState<string>('save-the-date');
 
     const tabs: Tab[] = [
@@ -65,12 +72,22 @@ export const Tabs = () => {
         switch (activeTab) {
             case 'save-the-date':
                 return <SaveTheDateTab/>
-            case 'contact-us':
-                <>{'contact us'}</>
+            case 'rsvp':
+                return <RsvpTab/>
+            case 'transportation-and-lodging':
+                return <AccomodationsTab/>
+            case 'registry':
+                return <RegistryTab/>
+            case 'wedding-party':
+                return <PartyTab/>
+            case 'gallery':
+                return <GalleryTab/>
             case 'faq':
-                <div>FAQ</div>
+                return <FaqTab/>
+            case 'contact-us':
+                return <ContactUsTab/>
             default: 
-                return <></>
+                return <SaveTheDateTab/>
         }
     }, [ activeTab ]);
 

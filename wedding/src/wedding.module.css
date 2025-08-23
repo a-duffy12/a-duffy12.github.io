@@ -86,7 +86,36 @@
     border: var(--theme_blue_dark) 5px double;
     border-radius: 8px;
 
-    
+    .contentTwoColumn {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      width: 100%;
+
+      .contentColumn {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: calc(50% - 4px);
+      }
+    }
+
+    .mapContainer { 
+      width: 100%;
+      padding-top: 100%;
+      position: relative;
+      overflow: hidden;
+
+      .mapFrame {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    }
   }
 
   .contentDesktop {

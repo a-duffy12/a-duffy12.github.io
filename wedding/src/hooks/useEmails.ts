@@ -1,37 +1,43 @@
 import { useCallback, useState } from 'react';
-import { Rsvp, RsvpDetails } from '../types';
+import { Drink, Meat, Rsvp, Transportation } from '../types';
 import emailjs from '@emailjs/browser';
-import { emailJsPublicKey, emailJsServiceId, emailJsTemplateId } from '../constants';
-import { useConfig } from '../contexts/configContext';
-import { useRsvp } from './useRSVP';
+import { email, emailJsPublicKey, emailJsServiceId, emailJsTemplateId } from '../constants';
 
 interface IRsvpEmailFields {
     rsvpId: string;
-    rsvpDetails: Rsvp[];
+    rsvp: Rsvp[];
 }
 
 export const useEmails = () => {
     const [ status, setStatus ] = useState<number>();
 
-    const sendEmail = useCallback(async ({ rsvpId, rsvpDetails }: IRsvpEmailFields) => {
+    const sendEmail = useCallback(async ({ rsvpId, rsvp }: IRsvpEmailFields) => {
         try {
+            const guestsString = rsvp.map(r => `
+                Name: ${r.firstName} ${r.lastName}
+                Attending: ${r.attending ? 'Yes' : 'No'} 
+                Meat: ${r.meat !== null ? Meat[r.meat] : 'n/a'} 
+                Drink: ${r.drink !== null ? Drink[r.drink] : 'n/a'}  
+                Transportation: ${r.transportation !== null ? Transportation[r.transportation] : 'n/a'}
+                Notes: ${r.notes}
+            `).join('\n');
+
+            const rsvpDetails = `Total attending: ${rsvp.filter(r => r.attending).length}\n 
+            Guests: \n\n
+            ${guestsString}
+            `
+
             const response = await emailjs.send(emailJsServiceId, emailJsTemplateId, {
-                rsvpId,
-                rsvpDetails.map(r => ({
-                    first_name: r.firstName,
-                    last_name: r.lastName,
-                    meat: r.meat.toString() || '',
-                    drink: r.drink.toString() || '',
-                    transportation: r.transportation.toString() || '',
-                    attending: r.attending ? 'Yes' : 'No'
-                }) as RsvpDetails)
+                email: email,
+                rsvp_id: rsvpId,
+                rsvp_details: rsvpDetails
             }, emailJsPublicKey);
             setStatus(response.status);
         } catch (error) {
             console.error(`EmailJS error: ${error}`);
             setStatus(500);
         }
-    }, [ status, emailjs ]);
+    }, [ email, emailJsServiceId, emailJsTemplateId, emailJsPublicKey ]);
 
     return { 
         sendEmail,

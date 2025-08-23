@@ -20,22 +20,14 @@ export type Tab = {
     enabled: boolean;
 }
 
-export type RsvpDetails = {
-    first_name: string;
-    last_name: string;
-    meat: string;
-    drink: string;
-    transportation: string;
-    attending: string;
-}
-
 export type Rsvp = {
     firstName: string;
     lastName: string;
     meat: Meat | null;
     drink: Drink | null,
     transportation: Transportation | null
-    attending: boolean
+    attending: boolean,
+    notes: string
 }
 
 export enum Meat {
@@ -43,7 +35,8 @@ export enum Meat {
     Chicken,
     Salmon,
     Vegetarian,
-    Vegan
+    Vegan,
+    Kids
 }
 
 export enum Drink {

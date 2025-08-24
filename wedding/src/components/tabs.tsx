@@ -93,13 +93,15 @@ export const Tabs = () => {
 
 
     return (
-        <div>
+        <div className={styles.nonHeader}>
             <div className={styles.tabs}>
                 {tabs.filter(tab => tab.enabled).map((tab, index) => (
                     <TabButton key={tab.id} label={tab.label} active={activeTab === tab.id} icon={tab.icon} onClick={() => setActiveTab(tab.id)} isFirst={index === 0} />
                 ))}
             </div>
-            {page}
+            <div className={styles.pageContent}>
+                {page}
+            </div>
         </div>
     );
 }

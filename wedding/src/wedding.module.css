@@ -91,6 +91,10 @@
         height: 0;
       }
 
+      scrollbar-width: none;
+
+      -ms-overflow-style: none;
+
       .content {
         display: flex;
         padding: 16px;

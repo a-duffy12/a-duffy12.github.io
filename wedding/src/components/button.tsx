@@ -1,18 +1,12 @@
-import { ButtonType } from '../types';
 import styles from '../wedding.module.css';
-import { IconType, } from 'react-icons';
 
 interface IButtonProps {
     label: string;
-    type: ButtonType;
     onClick: () => {};
-    icon: IconType | null;
 }
 
-export const Button = ({ type, onClick }: IButtonProps) => {
-
+export const Button = ({ label, type, onClick }: IButtonProps) => {
     return (
-        <>
-        </>
+        <button className={styles.buttonStyle} onClick={onClick} aria-label={label}>{label}</button>
     );
 }

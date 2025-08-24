@@ -129,6 +129,19 @@
             right: 0;
           }
         }
+
+        .buttonStyle {
+          font-family: 'Alice', serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 16px;
+          line-height: 18px;
+          width: 96px;
+          height: 32px;
+          background-color: var(--theme_honey);
+          border: var(--theme_black) 2px solid;
+          border-radius: 8px;
+        }
       }
 
       .contentDesktop {

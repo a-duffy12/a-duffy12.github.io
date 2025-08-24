@@ -1,7 +1,8 @@
 import { useEmails } from '../../hooks/useEmails';
-import { Drink, Meat, Rsvp, Transportation } from '../../types';
+import { ButtonType, Drink, Meat, Rsvp, Transportation } from '../../types';
 import { Content } from '../content';
 import styles from '../../wedding.module.css';
+import { Button } from '../button';
 
 export const SaveTheDateTab = () => {
     const { sendEmail, status } = useEmails();
@@ -17,10 +18,10 @@ export const SaveTheDateTab = () => {
                     <p>{'Paragrahs will use this styling'}</p>
                 </div>
             </Content>
-            <Content>
+            {/*<Content>
                 <div>
                     <div>{'August 29, 2026'}</div>
-                    <button onClick={() => sendEmail({rsvpId: '12345', rsvp: [
+                    <Button label='Test email' onClick={() => sendEmail({rsvpId: '12345', rsvp: [
                             {
                                 firstName: 'Aiden',
                                 lastName: 'Duffy',
@@ -48,10 +49,10 @@ export const SaveTheDateTab = () => {
                                 transportation: null,
                                 notes: 'no wet food so I am not coming'
                             }
-                        ]})}>Test email</button>
+                        ]})}/>
                     <div>{status}</div>
                 </div>
-            </Content>
+            </Content>*/}
             <Content>
                 <div className={styles.contentTwoColumn}>
                     <div className={styles.contentColumn}>

@@ -1,5 +1,11 @@
+import { Content } from '../content';
+
 export const TransportationTab = () => {
     return (
-        <div>Transportation</div>
+        <Content>
+            <div>
+                Bus Schedule
+            </div>
+        </Content>
     );
 }

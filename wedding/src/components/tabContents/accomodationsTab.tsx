@@ -19,11 +19,6 @@ export const AccomodationsTab = () => {
                     </div>
                 </div>
             </Content>
-            <Content>
-                <div>
-                    Bus Schedule
-                </div>
-            </Content>
         </>
     );
 }

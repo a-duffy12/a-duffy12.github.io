@@ -12,6 +12,7 @@ import { AccomodationsTab } from './tabContents/accomodationsTab';
 import { RegistryTab } from './tabContents/registryTab';
 import { PartyTab } from './tabContents/partyTab';
 import { GalleryTab } from './tabContents/galleryTab';
+import { TransportationTab } from './tabContents/transportationTab';
 
 export const Tabs = () => {
     const { config } = useConfig();
@@ -80,6 +81,8 @@ export const Tabs = () => {
                 return <SaveTheDateTab/>
             case 'rsvp':
                 return <RsvpTab/>
+            case 'transportation':
+                return <TransportationTab/>
             case 'accomodations':
                 return <AccomodationsTab/>
             case 'registry':

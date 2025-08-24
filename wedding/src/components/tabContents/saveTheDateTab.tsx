@@ -1,5 +1,5 @@
 import { useEmails } from '../../hooks/useEmails';
-import { ButtonType, Drink, Meat, Rsvp, Transportation } from '../../types';
+import { Drink, Meat, Rsvp, Transportation } from '../../types';
 import { Content } from '../content';
 import styles from '../../wedding.module.css';
 import { Button } from '../button';

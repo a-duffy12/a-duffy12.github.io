@@ -3,7 +3,7 @@ import { useConfig } from '../contexts/configContext';
 import { Tab } from '../types';
 import styles from '../wedding.module.css';
 import { TabButton } from './tabButton';
-import { FaBed, FaCalendarCheck, FaCamera, FaEnvelope, FaGift, FaHome, FaQuestionCircle, FaUserTie } from 'react-icons/fa';
+import { FaBed, FaBus, FaBusAlt, FaCalendarCheck, FaCamera, FaCar, FaCarAlt, FaCarSide, FaEnvelope, FaGift, FaHome, FaQuestionCircle, FaUserTie } from 'react-icons/fa';
 import { SaveTheDateTab } from './tabContents/saveTheDateTab';
 import { ContactUsTab } from './tabContents/contactUsTab';
 import { FaqTab } from './tabContents/faqTab';
@@ -31,10 +31,16 @@ export const Tabs = () => {
             enabled: config.rsvpEnabled
         },
         {
-            id: 'transportation-and-lodging',
+            id: 'transportation',
+            label: 'Transportation',
+            icon: FaCarSide,
+            enabled: config.transportationEnabled
+        },
+        {
+            id: 'accomodations',
             label: 'Accomodations',
             icon: FaBed,
-            enabled: config.transportationEnabled || config.lodgingEnabled
+            enabled: config.lodgingEnabled
         },
         {
             id: 'registry',
@@ -74,7 +80,7 @@ export const Tabs = () => {
                 return <SaveTheDateTab/>
             case 'rsvp':
                 return <RsvpTab/>
-            case 'transportation-and-lodging':
+            case 'accomodations':
                 return <AccomodationsTab/>
             case 'registry':
                 return <RegistryTab/>

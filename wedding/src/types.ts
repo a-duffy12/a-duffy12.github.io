@@ -20,6 +20,14 @@ export type Tab = {
     enabled: boolean;
 }
 
+export enum ButtonType {
+    blue,
+    yellow,
+    green,
+    black,
+    white
+}
+
 export type Rsvp = {
     firstName: string;
     lastName: string;

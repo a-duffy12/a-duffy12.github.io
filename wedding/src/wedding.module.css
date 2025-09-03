@@ -102,6 +102,9 @@
         background-color: var(--theme_blue);
         border: var(--theme_blue_dark) 5px double;
         border-radius: 8px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         .contentTwoColumn {
           display: flex;

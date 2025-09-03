@@ -3,12 +3,54 @@ import { Drink, Meat, Rsvp, Transportation } from '../../types';
 import { Content } from '../content';
 import styles from '../../wedding.module.css';
 import { Button } from '../button';
+import { useEffect, useState } from 'react';
+import { weddingDate } from '../../constants';
 
 export const SaveTheDateTab = () => {
     const { sendEmail, status } = useEmails();
+    const [ showCountdown, setShowCountdown ] = useState(true);
+    const [ countdownTime, setCountdownTime ] = useState(0);
+
+    useEffect(() => {
+        if (showCountdown) {
+            const countdownInterval = setInterval(() => {
+            const currentTime = new Date().getTime();
+            const eventTime = weddingDate.getTime();
+            let remainingTime = eventTime - currentTime;
+
+            if (remainingTime <= 0) {
+                setShowCountdown(false);
+                clearInterval(countdownInterval);
+            } else {
+                setCountdownTime(remainingTime);
+            }
+        }, 1000);
+        
+        return () => clearInterval(countdownInterval);
+        }
+    }, [ weddingDate, showCountdown, countdownTime ]);
+
+    const formatTime = (time: number) => {
+        const seconds = Math.floor((time / 1000) % 60);
+        const minutes = Math.floor((time / (1000 * 60)) % 60);
+        const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(time / (1000 * 60 * 60 * 24));
+
+        return (
+            <>{`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`}</>
+        );
+    }
 
     return (
         <>
+            <Content>
+                <div className={styles.centeredContent}>
+                    {showCountdown ?
+                        <h1>{formatTime(countdownTime)}</h1>
+                        :<h1>{'Congratulations Brooklyn and Aiden!'}</h1>
+                    }
+                </div>
+            </Content>
             <Content>
                 <div>
                     <div>{'Hello'}</div>

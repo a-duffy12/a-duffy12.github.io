@@ -11,9 +11,17 @@ export const Header = () => {
     return (
         <>
             <div className={styles.weddingHeader} >
-                <h1>
-                    {'Brooklyn Wright & Aiden Duffy'}
-                </h1>
+                <div className={styles.headerTitle}>
+                    <h1>
+                        {'Brooklyn Wright '}
+                    </h1>
+                    <h1>
+                        {' & '}
+                    </h1>
+                    <h1>
+                        {' Aiden Duffy'}
+                    </h1>
+                </div>
             </div>
         </>
     )

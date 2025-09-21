@@ -39,10 +39,19 @@
     text-align: center;
     color: var(--theme_white);
 
+    .headerTitle {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      text-align: 'center';
+    }
+
     h1 {
       font-family: 'Luxurious Script', cursive;
       font-size: 56px;
-      line-height: 64px;
+      line-height: 40px;
       font-weight: 500;
       text-shadow:
         -1px -1px 0 var(--theme_dark_green),
@@ -119,7 +128,7 @@
       .content {
         display: flex;
         padding: 16px;
-        margin: 32px calc(15%);
+        margin: 32px calc(10%);
         background-color: var(--theme_white);
         border: var(--theme_dark_green) 5px double;
         border-radius: 8px;

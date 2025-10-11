@@ -4,10 +4,7 @@
 
 ## Wedding react app deployment steps
 
-1. cd to the top level directory
-2. run `npm run build`
-3. add changes (`git add .`)
-4. commit
-5. push
-6. verify the live site
-7. if there are issues, go to the repo > Settings > Pages and check that the deployment is using the `source` option, the `gh-pages` branch, and the `/(root)` directory
+1. the workflow at `.github/workflows/deploy.yml` handles the steps
+2. to manually build, run `npm run build` from the root directory
+3. add, commit, and push the changes
+4. ensure that Github pages it correctly configured to serve through the actions flow by going to Settings > Pages and confirming that the **Source** dropdown has **"GitHub Actions"** selected (instead of "Deploy from a branch")

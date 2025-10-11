@@ -31,8 +31,10 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Project
-        run: npm run build
+      - name: Build Project with Typescript check
+        run: |
+          echo "Starting build process..."
+          npm run build
 
       - name: Setup Pages Artifact
         uses: actions/upload-pages-artifact@v3

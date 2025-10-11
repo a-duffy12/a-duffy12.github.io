@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react({
     jsxRuntime: 'automatic'
  })],
-  base: `/${REPO_NAME}/`,
+  base: '/',
   build: {
     target: 'es2020'
   }

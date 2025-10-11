@@ -4,9 +4,6 @@ import { Button } from './button';
 
 export const Header = () => {
 
-    const vo = () => {
-
-    }
 
     return (
         <>

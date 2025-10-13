@@ -186,6 +186,41 @@
           border-radius: 8px;
         }
 
+        .contextText {
+          width: 90%;
+          text-align: left;
+        }
+
+        .contentImage {
+          width: 100%;
+          height: 100%;
+
+        }
+      }
+
+      .contentDesktop {
+        max-width: 1720px;
+        max-height: fit-content;
+      }
+
+      .contentMobile {
+        max-width: 720px;
+        max-height: fit-content;
+      }
+
+      .contentVariableWidth {
+        display: flex;
+        padding: 24px;
+        margin: 32px auto;
+        background-color: var(--theme_white);
+        border: var(--theme_dark_green) 5px double;
+        border-radius: 8px;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        max-width: fit-content;
+
         .countdownContainer {
           display: flex;
           flex-direction: row;
@@ -211,21 +246,6 @@
           flex-direction: column;
           gap: 24px;
         }
-
-        .contextText {
-          width: 90%;
-          text-align: left;
-        }
-      }
-
-      .contentDesktop {
-        max-width: 1720px;
-        max-height: fit-content;
-      }
-
-      .contentMobile {
-        max-width: 720px;
-        max-height: fit-content;
       }
     }
   }

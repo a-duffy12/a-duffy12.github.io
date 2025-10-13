@@ -5,6 +5,8 @@ import styles from '../../wedding.module.css';
 import { Button } from '../button';
 import { useEffect, useMemo, useState } from 'react';
 import { weddingDate } from '../../constants';
+import saveTheDateImage from '../../assets/images/save_the_date.png';
+import { ContentVariableWidth } from '../contentVariableWidth';
 
 export const SaveTheDateTab = () => {
     const { sendEmail, status } = useEmails();
@@ -60,7 +62,7 @@ export const SaveTheDateTab = () => {
 
     return (
         <>
-            <Content>
+            <ContentVariableWidth>
                 {showCountdown ?
                     (stackCountdown ?
                         <div className={styles.countdownStacked}>
@@ -140,6 +142,13 @@ export const SaveTheDateTab = () => {
                         <h2>{'Congratulations Brooklyn and Aiden!'}</h2>
                     </div>
                 }                
+            </ContentVariableWidth>
+            <Content>
+                <img 
+                    className={styles.contentImage}
+                    src={saveTheDateImage}
+                    alt={'Aiden Duffy and Brooklyn Wright. Save the date: Saturday, August 29, 2026.'}
+                />
             </Content>
             <Content>
                 <div>

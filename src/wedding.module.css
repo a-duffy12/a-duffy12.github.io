@@ -206,6 +206,12 @@
           }
         }
 
+        .countdownStacked {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
         .contextText {
           width: 90%;
           text-align: left;

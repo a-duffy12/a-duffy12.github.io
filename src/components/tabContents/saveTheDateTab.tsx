@@ -3,7 +3,7 @@ import { Drink, Meat, Rsvp, Transportation } from '../../types';
 import { Content } from '../content';
 import styles from '../../wedding.module.css';
 import { Button } from '../button';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { weddingDate } from '../../constants';
 
 export const SaveTheDateTab = () => {
@@ -29,17 +29,6 @@ export const SaveTheDateTab = () => {
         return () => clearInterval(countdownInterval);
         }
     }, [ weddingDate, showCountdown, countdownTime ]);
-
-    const formatTime = (time: number) => {
-        const seconds = Math.floor((time / 1000) % 60);
-        const minutes = Math.floor((time / (1000 * 60)) % 60);
-        const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
-        const days = Math.floor(time / (1000 * 60 * 60 * 24));
-
-        return (
-            <>{`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`}</>
-        );
-    }
 
     const formatTimeElements = (time: number) => {
         const seconds = Math.floor((time / 1000) % 60);
@@ -67,44 +56,86 @@ export const SaveTheDateTab = () => {
         return numString.padStart(2, '0');
     }
 
+    const stackCountdown = useMemo(() => window.innerWidth < 650, [window.innerWidth]);
+
     return (
         <>
             <Content>
                 {showCountdown ?
-                    <div className={styles.countdownContainer}>
-                        <div className={styles.countdownBox}>
-                            <h1>
-                                {zeroPad(days)}
-                            </h1>
-                            <p>
-                                {'Days'}
-                            </p>
+                    (stackCountdown ?
+                        <div className={styles.countdownStacked}>
+                            <div className={styles.countdownContainer}>
+                                <div className={styles.countdownBox}>
+                                    <h1>
+                                        {zeroPad(days)}
+                                    </h1>
+                                    <p>
+                                        {'Days'}
+                                    </p>
+                                </div>
+                                <div className={styles.countdownBox}>
+                                    <h1>
+                                        {zeroPad(hours)}
+                                    </h1>
+                                    <p>
+                                        {'Hours'}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={styles.countdownContainer}>
+                                <div className={styles.countdownBox}>
+                                    <h1>
+                                        {zeroPad(minutes)}
+                                    </h1>
+                                    <p>
+                                        {'Minutes'}
+                                    </p>
+                                </div>
+                                <div className={styles.countdownBox}>
+                                    <h1>
+                                        {zeroPad(seconds)}
+                                    </h1>
+                                    <p>
+                                        {'Seconds'}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div className={styles.countdownBox}>
-                            <h1>
-                                {zeroPad(hours)}
-                            </h1>
-                            <p>
-                                {'Hours'}
-                            </p>
+                        : <div className={styles.countdownContainer}>
+                            <div className={styles.countdownBox}>
+                                <h1>
+                                    {zeroPad(days)}
+                                </h1>
+                                <p>
+                                    {'Days'}
+                                </p>
+                            </div>
+                            <div className={styles.countdownBox}>
+                                <h1>
+                                    {zeroPad(hours)}
+                                </h1>
+                                <p>
+                                    {'Hours'}
+                                </p>
+                            </div>
+                            <div className={styles.countdownBox}>
+                                <h1>
+                                    {zeroPad(minutes)}
+                                </h1>
+                                <p>
+                                    {'Minutes'}
+                                </p>
+                            </div>
+                            <div className={styles.countdownBox}>
+                                <h1>
+                                    {zeroPad(seconds)}
+                                </h1>
+                                <p>
+                                    {'Seconds'}
+                                </p>
+                            </div>
                         </div>
-                        <div className={styles.countdownBox}>
-                            <h1>
-                                {zeroPad(minutes)}
-                            </h1>
-                            <p>
-                                {'Minutes'}
-                            </p>
-                        </div>
-                        <div className={styles.countdownBox}>
-                            <h1>
-                                {zeroPad(seconds)}
-                            </h1>
-                            <p>
-                                {'Seconds'}
-                            </p>
-                        </div>
-                    </div>
+                    )
                     : <div>
                         <h2>{'Congratulations Brooklyn and Aiden!'}</h2>
                     </div>

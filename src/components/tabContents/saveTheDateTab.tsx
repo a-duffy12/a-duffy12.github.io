@@ -41,19 +41,78 @@ export const SaveTheDateTab = () => {
         );
     }
 
+    const formatTimeElements = (time: number) => {
+        const seconds = Math.floor((time / 1000) % 60);
+        const minutes = Math.floor((time / (1000 * 60)) % 60);
+        const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(time / (1000 * 60 * 60 * 24));
+
+        return {
+            seconds,
+            minutes,
+            hours,
+            days
+        };
+    }
+
+    const {seconds, minutes, hours, days} = formatTimeElements(countdownTime);
+
+    const zeroPad = (num: number) => {
+        const numString = String(num);
+
+        if (numString.length >= 2) {
+            return numString;
+        }
+
+        return numString.padStart(2, '0');
+    }
+
     return (
         <>
             <Content>
-                <div className={styles.centeredContent}>
-                    {showCountdown ?
-                        <h1>{formatTime(countdownTime)}</h1>
-                        :<h1>{'Congratulations Brooklyn and Aiden!'}</h1>
-                    }
-                </div>
+                {showCountdown ?
+                    <div className={styles.countdownContainer}>
+                        <div className={styles.countdownBox}>
+                            <h1>
+                                {zeroPad(days)}
+                            </h1>
+                            <p>
+                                {'Days'}
+                            </p>
+                        </div>
+                        <div className={styles.countdownBox}>
+                            <h1>
+                                {zeroPad(hours)}
+                            </h1>
+                            <p>
+                                {'Hours'}
+                            </p>
+                        </div>
+                        <div className={styles.countdownBox}>
+                            <h1>
+                                {zeroPad(minutes)}
+                            </h1>
+                            <p>
+                                {'Minutes'}
+                            </p>
+                        </div>
+                        <div className={styles.countdownBox}>
+                            <h1>
+                                {zeroPad(seconds)}
+                            </h1>
+                            <p>
+                                {'Seconds'}
+                            </p>
+                        </div>
+                    </div>
+                    : <div className={styles.centeredContent}>
+                        <h2>{'Congratulations Brooklyn and Aiden!'}</h2>
+                    </div>
+                }                
             </Content>
             <Content>
                 <div>
-                    <div>{'Hello'}</div>
+                    <div>{'Div'}</div>
                     <h1>{'Heading One'}</h1>
                     <h2>{'Heading Two'}</h2>
                     <h3>{'Heading Three'}</h3>

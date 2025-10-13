@@ -105,7 +105,7 @@ export const SaveTheDateTab = () => {
                             </p>
                         </div>
                     </div>
-                    : <div className={styles.centeredContent}>
+                    : <div>
                         <h2>{'Congratulations Brooklyn and Aiden!'}</h2>
                     </div>
                 }                
@@ -117,6 +117,7 @@ export const SaveTheDateTab = () => {
                     <h2>{'Heading Two'}</h2>
                     <h3>{'Heading Three'}</h3>
                     <p>{'Paragrahs will use this styling'}</p>
+                    <p className={styles.contentText}>{'Long text content will be left-justified with the class used on this element.'}</p>
                 </div>
             </Content>
             {/*<Content>

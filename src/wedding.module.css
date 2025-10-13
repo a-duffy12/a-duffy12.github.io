@@ -133,6 +133,7 @@
         border: var(--theme_dark_green) 5px double;
         border-radius: 8px;
         flex-direction: column;
+        gap: 8px;
         align-items: center;
         justify-content: center;
 
@@ -199,6 +200,11 @@
             height: 64px;
             width: 64px;
           }
+        }
+
+        .contextText {
+          width: 90%;
+          text-align: left;
         }
       }
 

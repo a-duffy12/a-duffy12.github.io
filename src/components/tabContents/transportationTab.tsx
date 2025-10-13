@@ -1,5 +1,6 @@
 import { Content } from '../content';
 import styles from '../../wedding.module.css';
+import { Bar } from '../bar';
 
 export const TransportationTab = () => {
     return (
@@ -7,6 +8,7 @@ export const TransportationTab = () => {
             <h3>
                 {'Transporation Details to Come'}
             </h3>
+            <Bar/>
             <p className={styles.contextText}>
                 {'Buses will be available to shuttle guests between the Listowel Golf Club, the Listowel Country Inn, and Wingham.'}
             </p>

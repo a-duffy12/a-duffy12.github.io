@@ -151,6 +151,11 @@
           }
         }
 
+        .horizontalBar {
+          border-top: var(--theme_dark_green) 2px ridge;
+          width: 90%;
+        }
+
         .mapContainer { 
           width: 100%;
           padding-top: 100%;
@@ -192,7 +197,6 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
-            /*justify-content: center;*/
             align-items: center;
             border: var(--theme_dark_green) 2px solid;
             border-radius: 8px;

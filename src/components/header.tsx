@@ -4,7 +4,6 @@ import { Button } from './button';
 
 export const Header = () => {
 
-
     return (
         <>
             <div className={styles.weddingHeader} >

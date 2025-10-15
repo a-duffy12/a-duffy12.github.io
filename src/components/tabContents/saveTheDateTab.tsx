@@ -150,16 +150,6 @@ export const SaveTheDateTab = () => {
                     alt={'Aiden Duffy and Brooklyn Wright. Save the date: Saturday, August 29, 2026.'}
                 />
             </Content>
-            <Content>
-                <div>
-                    <div>{'Div'}</div>
-                    <h1>{'Heading One'}</h1>
-                    <h2>{'Heading Two'}</h2>
-                    <h3>{'Heading Three'}</h3>
-                    <p>{'Paragrahs will use this styling'}</p>
-                    <p className={styles.contentText}>{'Long text content will be left-justified with the class used on this element.'}</p>
-                </div>
-            </Content>
             {/*<Content>
                 <div>
                     <div>{'August 29, 2026'}</div>

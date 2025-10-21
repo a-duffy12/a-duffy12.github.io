@@ -9,10 +9,10 @@ export const TransportationTab = () => {
                 {'Transporation Details to Come'}
             </h3>
             <Bar/>
-            <p className={styles.contextText}>
+            <p className={styles.contentText}>
                 {'Buses will be available to shuttle guests between the Listowel Golf Club, the Listowel Country Inn, and Wingham.'}
             </p>
-            <p className={styles.contextText}>
+            <p className={styles.contentText}>
                 {'The exact timing and stop locations will be posted at a later date.'}
             </p>
         </Content>

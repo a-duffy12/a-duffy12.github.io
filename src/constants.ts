@@ -2,11 +2,11 @@ import { Config } from './types';
 
 export const configInitialState: Config = {
     savetheDateEnabled: true,
-    contactUsEnabled: true,
-    faqEnabled: false,
+    contactUsEnabled: false,
+    faqEnabled: true,
     transportationEnabled: true,
     lodgingEnabled: true,
-    registryEnabled: false,
+    registryEnabled: true,
     weddingPartyEnabled: false,
     rsvpEnabled: false,
     photoGalleryEnabled: false
@@ -18,3 +18,4 @@ export const emailJsTemplateId = 'template_y86eona';
 export const emailJsPublicKey = 'sOz0m0b2U13Lm27Tm';
 
 export const weddingDate = new Date(2026, 7, 29, 15, 30);
+export const registryLink = 'https://www.myregistry.com/wedding-registry/aiden-duffy-and-brooklyn-wright-wingham-on/5068274';

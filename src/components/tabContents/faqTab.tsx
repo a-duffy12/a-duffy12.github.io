@@ -1,5 +1,13 @@
+import { Bar } from '../bar';
+import { Content } from '../content';
+
 export const FaqTab = () => {
     return (
-        <div>FAQ</div>
+        <Content>
+            <h3>
+                {'Frequently Asked Questions'}
+            </h3>
+            <Bar/>
+        </Content>
     );
 }

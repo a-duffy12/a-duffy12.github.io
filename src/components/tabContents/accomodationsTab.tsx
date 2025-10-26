@@ -2,6 +2,7 @@ import { Content } from '../content';
 import styles from '../../wedding.module.css';
 import { useMobile } from '../../hooks/useMobile';
 import { Button } from '../button';
+import { Bar } from '../bar';
 
 export const AccomodationsTab = () => {
     const openListowelCountryInnPage = () => {
@@ -18,6 +19,7 @@ export const AccomodationsTab = () => {
                 <h3>
                     {'Listowel Country Inn'}
                 </h3>
+                <Bar/>
                 <p className={styles.contentText}>
                     {'Located five minutes away from the venue. The room types are: basic (two double beds), deluxe (two double beds), and king (one king bed). Book under \'Brooklyn and Aiden\' to be grouped near other guests.'}
                 </p>
@@ -33,6 +35,7 @@ export const AccomodationsTab = () => {
                 <h3>
                     {'Wingham Motel'}
                 </h3>
+                <Bar/>
                 <p className={styles.contentText}>
                     {'Located just outside Wingham, 30 minutes from the venue. Rooms have two double beds or one queen bed.'}
                 </p>

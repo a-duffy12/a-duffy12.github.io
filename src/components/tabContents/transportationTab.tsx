@@ -5,7 +5,7 @@ import { Bar } from '../bar';
 export const TransportationTab = () => {
     return (
         <Content>
-            <h3>
+            <h3 className={styles.contentText}>
                 {'Transporation Details to Come'}
             </h3>
             <Bar/>

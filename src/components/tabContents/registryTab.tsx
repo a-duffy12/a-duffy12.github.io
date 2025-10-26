@@ -15,7 +15,7 @@ export const RegistryTab = () => {
     
     return (
         <Content>
-            <h3>
+            <h3 className={styles.contentText}>
                 {'Wedding Registry'}
             </h3>
             <Bar/>

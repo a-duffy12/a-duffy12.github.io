@@ -16,7 +16,7 @@ export const AccomodationsTab = () => {
     return (
         <>
             <Content>
-                <h3>
+                <h3 className={styles.contentText}>
                     {'Listowel Country Inn'}
                 </h3>
                 <Bar/>
@@ -32,7 +32,7 @@ export const AccomodationsTab = () => {
                 </div>
             </Content>
             <Content>
-                <h3>
+                <h3 className={styles.contentText}>
                     {'Wingham Motel'}
                 </h3>
                 <Bar/>

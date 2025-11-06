@@ -7,6 +7,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { weddingDate } from '../../constants';
 import saveTheDateImage from '../../assets/images/save_the_date.png';
 import { ContentVariableWidth } from '../contentVariableWidth';
+import { Bar } from '../bar';
+import { QnA } from '../qna';
 
 export const SaveTheDateTab = () => {
     const { sendEmail, status } = useEmails();
@@ -186,15 +188,32 @@ export const SaveTheDateTab = () => {
                 </div>
             </Content>*/}
             <Content>
-                <div className={styles.contentTwoColumn}>
-                    <div className={styles.contentColumn}>
-                        <p>Timeline details</p>
-                    </div>
-                    <div className={styles.contentColumn}>
-                        <div className={styles.mapContainer}>
-                            <iframe className={styles.mapFrame} src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Listowel%20golf%20club)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'/>
-                        </div>
-                    </div>
+                <h3 className={styles.contentText}>
+                    {'Schedule of Events'}
+                </h3>
+                <Bar/>
+                <QnA 
+                    question={'Ceremony'}
+                    answer={'4:00 PM'}
+                />
+                <QnA 
+                    question={'Cocktail Hour'}
+                    answer={'4:30 PM'}
+                />
+                <QnA 
+                    question={'Dinner (doors open)'}
+                    answer={'6:00 PM'}
+                />
+                <QnA 
+                    question={'Reception'}
+                    answer={'8:00 PM'}
+                />
+                <QnA 
+                    question={'Late-Night Snack'}
+                    answer={'10:30 PM'}
+                />
+                <div className={styles.mapContainer}>
+                    <iframe className={styles.mapFrame} src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Listowel%20golf%20club)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'/>
                 </div>
             </Content>
         </>

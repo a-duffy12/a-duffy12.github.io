@@ -197,6 +197,11 @@
           text-align: center;
         }
 
+        .contentTextEmphasis {
+          font-weight: 700;
+          font-style: italic;
+        }
+
         .contentBreak {
           padding-bottom: 8px;
         }

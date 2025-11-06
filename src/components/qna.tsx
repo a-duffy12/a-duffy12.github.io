@@ -8,11 +8,9 @@ interface IQnAProps {
 export const QnA = ({ question, answer }: IQnAProps) => {
     return (
         <>
-            <b>
-                <i className={styles.contentText}>
-                    {question}
-                </i>
-            </b>
+            <p className={`${styles.contentText} ${styles.contentTextEmphasis}`}>
+                {question}
+            </p>
             <p className={`${styles.contentText} ${styles.contentBreak}`}>
                 {answer}
             </p>

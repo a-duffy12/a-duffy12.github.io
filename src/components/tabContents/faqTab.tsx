@@ -12,7 +12,7 @@ export const FaqTab = () => {
             <Bar/>
             <QnA 
                 question={'What is the dress code?'} 
-                answer={'Formal.'} 
+                answer={'Formal or Black Tie.'} 
             />
             <QnA 
                 question={'Will the wedding be indoors or outdoors?'} 
@@ -32,7 +32,7 @@ export const FaqTab = () => {
             />
             <QnA 
                 question={'Is there parking at the venue?'} 
-                answer={'There is parking. Guests can also leave vehicles parked overnight.'} 
+                answer={'There is parking on-site. Guests can also leave vehicles parked overnight.'} 
             />
             <QnA 
                 question={'Is there any form of public transit?'} 

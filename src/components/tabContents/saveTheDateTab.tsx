@@ -201,18 +201,23 @@ export const SaveTheDateTab = () => {
                     answer={'4:30 PM'}
                 />
                 <QnA 
-                    question={'Dinner (doors open)'}
+                    question={'Dinner'}
                     answer={'6:00 PM'}
                 />
                 <QnA 
                     question={'Reception'}
                     answer={'8:00 PM'}
                 />
+            </Content>
+            <Content>
+                <h3 className={styles.contentText}>
+                    {'Venue'}
+                </h3>
+                <Bar/>
                 <QnA 
-                    question={'Late-Night Snack'}
-                    answer={'10:30 PM'}
-                />
-                <div className={styles.mapContainer}>
+                    question={'Listowel Golf Club'}
+                    answer={'8380 Fairlane Rd, Listowel'}
+                />               <div className={styles.mapContainer}>
                     <iframe className={styles.mapFrame} src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Listowel%20golf%20club)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'/>
                 </div>
             </Content>

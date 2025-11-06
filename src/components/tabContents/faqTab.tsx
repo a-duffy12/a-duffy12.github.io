@@ -40,7 +40,7 @@ export const FaqTab = () => {
             />
             <QnA 
                 question={'I have a question not covered here, how can I ask it?'} 
-                answer={'Email us at brooklynaiden2026@gmail.com'} 
+                answer={'Email us at brooklynaiden2026@gmail.com.'} 
             />
         </Content>
     );

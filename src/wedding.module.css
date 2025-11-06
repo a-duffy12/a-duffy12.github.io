@@ -20,7 +20,7 @@
 }
 
 .wedding {
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
   background-color: var(--theme_blue_accent);
   background-image: url('/wedding/src/assets/images/white_florals.jpg');

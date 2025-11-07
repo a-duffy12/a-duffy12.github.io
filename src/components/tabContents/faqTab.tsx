@@ -20,7 +20,7 @@ export const FaqTab = () => {
             />
             <QnA 
                 question={'What if I have dietary restrictions?'} 
-                answer={'You will be able to make your meal selection on RRSVP. Vegan and vegetarian options will be available.'} 
+                answer={'Guests will be able to make meal selections when they RSVP. Vegan and vegetarian options will be available.'} 
             />
             <QnA 
                 question={'Can I bring a plus one?'} 

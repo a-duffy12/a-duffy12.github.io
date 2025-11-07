@@ -187,7 +187,7 @@ export const SaveTheDateTab = () => {
                     <div>{status}</div>
                 </div>
             </Content>*/}
-            <Content>
+            <ContentVariableWidth>
                 <h3 className={styles.contentText}>
                     {'Schedule of Events'}
                 </h3>
@@ -208,7 +208,7 @@ export const SaveTheDateTab = () => {
                     question={'Reception'}
                     answer={'8:00 PM'}
                 />
-            </Content>
+            </ContentVariableWidth>
             <Content>
                 <h3 className={styles.contentText}>
                     {'Venue'}

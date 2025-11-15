@@ -21,7 +21,7 @@ export const AccomodationsTab = () => {
                 </h3>
                 <Bar/>
                 <p className={styles.contentText}>
-                    {'Located five minutes away from the venue. Book under \'Brooklyn and Aiden\' to be grouped near other guests.'}
+                    {'Located a five minute drive away from the venue. Book under \'Brooklyn and Aiden\' to be grouped near other guests.'}
                 </p>
                 <p className={styles.contentText}>
                     {'This motel does have another wedding the same weekend. Booking early is encouraged. No rooms are reserved.'}
@@ -37,7 +37,7 @@ export const AccomodationsTab = () => {
                 </h3>
                 <Bar/>
                 <p className={styles.contentText}>
-                    {'Located just outside Wingham, 30 minutes from the venue.'}
+                    {'Located just outside Wingham, a 30 minute drive from the venue.'}
                 </p>
                 <p className={styles.contentText}>
                     {'We do not have a hotel block and no rooms are reserved. Transportation to and from this location will be available.'}

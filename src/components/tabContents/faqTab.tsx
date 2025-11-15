@@ -19,7 +19,7 @@ export const FaqTab = () => {
                 answers={['The ceremony will be outdoors. Cocktail hour is split between an indoor space and an outdoor patio. Dinner and reception are indoors, with the outdoor patio remaining open. In the event of rain, the ceremony will be held indoors.']} 
             />
             <QnA 
-                question={'What is the dress code?'} 
+                question={'What is the recommended attire?'} 
                 answers={[
                     'Cocktail or formal wedding attrire.', 
                     'Masculine: Jacket preferred, tie optional.', 

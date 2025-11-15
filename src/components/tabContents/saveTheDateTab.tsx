@@ -194,19 +194,19 @@ export const SaveTheDateTab = () => {
                 <Bar/>
                 <QnA 
                     question={'Ceremony'}
-                    answer={'4:00 PM'}
+                    answers={['4:00 PM']}
                 />
                 <QnA 
                     question={'Cocktail Hour'}
-                    answer={'4:30 PM'}
+                    answers={['4:30 PM']}
                 />
                 <QnA 
                     question={'Dinner'}
-                    answer={'6:00 PM'}
+                    answers={['6:00 PM']}
                 />
                 <QnA 
                     question={'Reception'}
-                    answer={'8:00 PM'}
+                    answers={['8:00 PM']}
                 />
             </ContentVariableWidth>
             <Content>
@@ -216,7 +216,7 @@ export const SaveTheDateTab = () => {
                 <Bar/>
                 <QnA 
                     question={'Listowel Golf Club'}
-                    answer={'8380 Fairlane Rd, Listowel'}
+                    answers={['8380 Fairlane Rd, Listowel']}
                 />               <div className={styles.mapContainer}>
                     <iframe className={styles.mapFrame} src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Listowel%20golf%20club)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'/>
                 </div>

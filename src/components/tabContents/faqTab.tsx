@@ -21,7 +21,7 @@ export const FaqTab = () => {
             <QnA 
                 question={'What is the recommended attire?'} 
                 answers={[
-                    'Cocktail or formal wedding attrire.', 
+                    'Formal or cocktail wedding attrire.', 
                     'Masculine: Jacket preferred, tie optional.', 
                     'Feminine: Dress below the knee, evening fabrics preferred.',
                     'There is no specific colour scheme. Please refrain from wearing white or very light-coloured dresses.'

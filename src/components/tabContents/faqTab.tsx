@@ -32,6 +32,10 @@ export const FaqTab = () => {
                 question={'Can I bring a plus one?'} 
                 answers={['Invitations will explictly list all invited guests and plus ones.']} 
             />
+            <QnA
+                question={'Will the wedding be child-free?'}
+                answers={['We will be including children and babies in the celebration. All invited members of your family will be listed on your invitation.']}
+            />
             <QnA 
                 question={'What if I have dietary restrictions?'} 
                 answers={['Guests will be able to make meal selections when they RSVP. Vegan and vegetarian options will be available. Please contact us directly if you have severe or life-threatening food allergies. We will work with you and the venue to ensure your plated dinner is safe for consumption.']} 

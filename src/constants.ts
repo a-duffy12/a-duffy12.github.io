@@ -6,7 +6,7 @@ export const configInitialState: Config = {
     faqEnabled: true,
     transportationEnabled: true,
     lodgingEnabled: true,
-    registryEnabled: false,
+    registryEnabled: true,
     weddingPartyEnabled: false,
     rsvpEnabled: false,
     photoGalleryEnabled: false

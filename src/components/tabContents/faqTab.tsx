@@ -11,6 +11,10 @@ export const FaqTab = () => {
             </h3>
             <Bar/>
             <QnA 
+                question={'Where can I RSVP?'} 
+                answers={['There will be an RSVP form available on this site in the spring once the physical invitations are mailed out.']} 
+            />
+            <QnA 
                 question={'Is everything at the same location?'} 
                 answers={['Yes. The ceremony, cocktail hour, dinner, and reception are all at the Listowel Golf Club.']} 
             />

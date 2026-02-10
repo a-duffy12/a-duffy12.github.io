@@ -15,12 +15,23 @@ export const FaqTab = () => {
                 answers={['There will be an RSVP form available on this site in the spring once the physical invitations are mailed out.']} 
             />
             <QnA 
+                question={'What are the wedding colours?'} 
+                answers={[
+                    'The wedding colours are juniper and periwinkle.',
+                    'The bridesmaids will be wearing juniper (green), and the groomsmen will be wearing gray.'
+                ]} 
+            />
+            <QnA 
                 question={'Is everything at the same location?'} 
                 answers={['Yes. The ceremony, cocktail hour, dinner, and reception are all at the Listowel Golf Club.']} 
             />
             <QnA 
                 question={'Will the wedding be indoors or outdoors?'} 
                 answers={['The ceremony will be outdoors. Cocktail hour is split between an indoor space and an outdoor patio. Dinner and reception are indoors, with the outdoor patio remaining open. In the event of rain, the ceremony will be held indoors.']} 
+            />
+            <QnA 
+                question={'Will the ceremony be unplugged?'} 
+                answers={['Yes, please!']} 
             />
             <QnA 
                 question={'What is the recommended attire?'} 

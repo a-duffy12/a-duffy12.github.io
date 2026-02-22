@@ -29,8 +29,8 @@ export const FaqTab = () => {
             <QnA
                 question={'When should I arrive?'}
                 answers={[
-                    'Ceremony - 4pm start - Arrive 15 to 30 minutes prior.',
-                    'Dinner - 6pm start - Arrive 10 to 15 minutes prior.',
+                    'Ceremony - 4pm start - Arrive 20 to 30 minutes prior.',
+                    'Dinner - 6pm start - Arrive 10 to 20 minutes prior.',
                     'Reception - 8pm start'
                 ]}
             />
@@ -94,8 +94,8 @@ export const FaqTab = () => {
                     <QnA
                         question={'When should I arrive?'}
                         answers={[
-                            'Ceremony - 4pm start - Arrive 15 to 30 minutes prior.',
-                            'Dinner - 6pm start - Arrive 10 to 15 minutes prior.',
+                            'Ceremony - 4pm start - Arrive 20 to 30 minutes prior.',
+                            'Dinner - 6pm start - Arrive 10 to 20 minutes prior.',
                             'Reception - 8pm start'
                         ]}
                     />

@@ -11,6 +11,7 @@ export type Config = {
     weddingPartyEnabled: boolean;
     rsvpEnabled: boolean;
     photoGalleryEnabled: boolean;
+    stagAndDoeEnabled: boolean;
 }
 
 export type Tab = {

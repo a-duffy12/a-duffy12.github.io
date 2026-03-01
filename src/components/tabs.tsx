@@ -3,7 +3,7 @@ import { useConfig } from '../contexts/configContext';
 import { Tab } from '../types';
 import styles from '../wedding.module.css';
 import { TabButton } from './tabButton';
-import { FaBed, FaBus, FaBusAlt, FaCalendarCheck, FaCamera, FaCar, FaCarAlt, FaCarSide, FaEnvelope, FaGift, FaHome, FaQuestionCircle, FaUserTie } from 'react-icons/fa';
+import { FaBed, FaBus, FaBusAlt, FaCalendarCheck, FaCamera, FaCar, FaCarAlt, FaCarSide, FaEnvelope, FaGift, FaGlassCheers, FaHome, FaQuestionCircle, FaUserTie } from 'react-icons/fa';
 import { SaveTheDateTab } from './tabContents/saveTheDateTab';
 import { ContactUsTab } from './tabContents/contactUsTab';
 import { FaqTab } from './tabContents/faqTab';
@@ -13,6 +13,7 @@ import { RegistryTab } from './tabContents/registryTab';
 import { PartyTab } from './tabContents/partyTab';
 import { GalleryTab } from './tabContents/galleryTab';
 import { TransportationTab } from './tabContents/transportationTab';
+import { StagAndDoeTab } from './tabContents/stagAndDoeTab';
 
 export const Tabs = () => {
     const { config } = useConfig();
@@ -32,16 +33,22 @@ export const Tabs = () => {
             enabled: config.rsvpEnabled
         },
         {
-            id: 'transportation',
-            label: 'Transportation',
-            icon: FaCarSide,
-            enabled: config.transportationEnabled
+            id: 'stag-and-doe',
+            label: 'Stag and Doe',
+            icon: FaGlassCheers,
+            enabled: config.stagAndDoeEnabled
         },
         {
             id: 'accomodations',
             label: 'Accomodations',
             icon: FaBed,
             enabled: config.lodgingEnabled
+        },
+        {
+            id: 'transportation',
+            label: 'Transportation',
+            icon: FaCarSide,
+            enabled: config.transportationEnabled
         },
         {
             id: 'registry',
@@ -81,10 +88,12 @@ export const Tabs = () => {
                 return <SaveTheDateTab/>
             case 'rsvp':
                 return <RsvpTab/>
-            case 'transportation':
-                return <TransportationTab/>
+            case 'stag-and-doe':
+                return <StagAndDoeTab/>
             case 'accomodations':
                 return <AccomodationsTab/>
+            case 'transportation':
+                return <TransportationTab/>
             case 'registry':
                 return <RegistryTab/>
             case 'wedding-party':

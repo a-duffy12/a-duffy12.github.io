@@ -9,6 +9,7 @@ import saveTheDateImage from '../../assets/images/save_the_date.png';
 import { ContentVariableWidth } from '../contentVariableWidth';
 import { Bar } from '../bar';
 import { QnA } from '../qna';
+import stageAndDoeImage from '../../assets/images/stag_and_doe.gif';
 
 export const SaveTheDateTab = () => {
     const { sendEmail, status } = useEmails();
@@ -217,7 +218,8 @@ export const SaveTheDateTab = () => {
                 <QnA 
                     question={'Listowel Golf Club'}
                     answers={['8380 Fairlane Rd, Listowel']}
-                />               <div className={styles.mapContainer}>
+                />               
+                <div className={styles.mapContainer}>
                     <iframe className={styles.mapFrame} src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Listowel%20golf%20club)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'/>
                 </div>
             </Content>

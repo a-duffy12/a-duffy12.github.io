@@ -11,8 +11,15 @@ export const useRsvp = () => {
         localStorage.setItem(rsvpKey, String(rsvpSubmitted));
     }, [ rsvpSubmitted ]);
 
+    const rsvpForm = {};
+
     return {
         rsvpSubmitted,
-        setRsvpSubmitted
+        setRsvpSubmitted,
+        rsvpForm
     };
-}
+};
+
+const rsvpSchema = {};
+
+const rsvpDefaultValues = {};

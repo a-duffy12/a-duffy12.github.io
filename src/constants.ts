@@ -37,16 +37,31 @@ export enum RsvpCode {
     REC005 = 'REC005' // reception tier individual with +1 and two children
 };
 
+export const rsvpPlusOneMap:  Record<RsvpCode, boolean> = {
+    [RsvpCode.CER001]: true,
+    [RsvpCode.CER002]: false,
+    [RsvpCode.CER003]: false,
+    [RsvpCode.CER005]: true,
+    [RsvpCode.DIN001]: true,
+    [RsvpCode.DIN002]: false,
+    [RsvpCode.DIN003]: false,
+    [RsvpCode.DIN004]: false,
+    [RsvpCode.REC001]: true,
+    [RsvpCode.REC002]: false,
+    [RsvpCode.REC003]: false,
+    [RsvpCode.REC005]: true
+};
+
 export const rsvpCountMap: Record<RsvpCode, number> = {
-    [RsvpCode.CER001]: 2,
+    [RsvpCode.CER001]: 1,
     [RsvpCode.CER002]: 2,
     [RsvpCode.CER003]: 3,
-    [RsvpCode.CER005]: 4,
-    [RsvpCode.DIN001]: 2,
+    [RsvpCode.CER005]: 3,
+    [RsvpCode.DIN001]: 1,
     [RsvpCode.DIN002]: 2,
     [RsvpCode.DIN003]: 3,
     [RsvpCode.DIN004]: 4,
-    [RsvpCode.REC001]: 2,
+    [RsvpCode.REC001]: 1,
     [RsvpCode.REC002]: 2,
     [RsvpCode.REC003]: 3,
     [RsvpCode.REC005]: 4

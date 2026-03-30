@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { z } from 'zod';
-import { DinnerChoice, RsvpCode, rsvpCountMap, rsvpDinnerMap } from '../constants';
+import { DinnerChoice, RsvpCode, rsvpCountMap, rsvpDinnerMap, rsvpPlusOneMap } from '../constants';
 
 const rsvpKey = 'rsvp';
 
@@ -26,6 +26,7 @@ const rsvpSchema = z.object({
     code: z.enum(RsvpCode, {
         error: () => ({ message: 'Please enter a valid code. It can be found on your invitation.'})
     }),
+    bringingPlusOne: z.boolean(),
     rsvps: z.array(
         z.object({
             name: z.string().min(1, 'Name is required'),
@@ -35,7 +36,16 @@ const rsvpSchema = z.object({
         })
     )
 }).superRefine((data, ctx) => {
-    const expectedCount = rsvpCountMap[data.code];
+    const canHavePlusOne = rsvpPlusOneMap[data.code];
+    if (data.bringingPlusOne && !canHavePlusOne) {
+        ctx.addIssue({
+            code: 'custom',
+            message: 'This invitation is not eligible for a plus one.',
+            path: ['bringingPlusOne']
+        });
+    }
+    
+    const expectedCount = rsvpCountMap[data.code] + (data.bringingPlusOne ? 1 : 0);
     const actualCount = data.rsvps.length;
 
     if (expectedCount !== actualCount) {
@@ -43,9 +53,8 @@ const rsvpSchema = z.object({
             code: 'custom',
             message: `Please provide RSVP details for the ${expectedCount} invitees.`,
             path: ['rsvps']
-        })
+        });
     }
-
 
     const atDinner = rsvpDinnerMap[data.code];
 
@@ -56,10 +65,12 @@ const rsvpSchema = z.object({
                     code: 'custom',
                     message: 'Meal choice is required',
                     path: ['rsvps', index, 'meal']
-                })
+                });
             }
-        })
+        });
     }
 });
+
+type RsvpData = z.infer<typeof rsvpSchema>;
 
 const rsvpDefaultValues = {};

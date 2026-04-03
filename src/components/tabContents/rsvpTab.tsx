@@ -4,10 +4,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { RsvpData, rsvpDefaultValues, rsvpSchema, } from '../../helpers/rsvpSchema';
 import { useEffect, useMemo, useState } from 'react';
 import { rsvpCountMap, rsvpDinnerMap, rsvpPlusOneMap } from '../../constants';
+import { Content } from '../content';
+import { Button } from '../button';
 
 export const RsvpTab = () => {
     const { rsvpSubmitted, setRsvpSubmitted } = useRsvp();
-    const { control, handleSubmit, watch, formState: { errors } } = useForm<RsvpData>({
+    const { register, control, handleSubmit, watch, formState: { errors } } = useForm<RsvpData>({
         resolver: zodResolver(rsvpSchema),
         defaultValues: rsvpDefaultValues
     });
@@ -19,11 +21,13 @@ export const RsvpTab = () => {
 
     const watchedCode = watch('code');
     const watchedPlusOne = watch('bringingPlusOne');
+    const watchedGuests = watch('rsvps');
+
+    const showPlusOneForm = useMemo(() => rsvpPlusOneMap[watchedCode], [ rsvpPlusOneMap, watchedCode ]);
     const showDinnerFields = useMemo(() => rsvpDinnerMap[watchedCode], [ rsvpDinnerMap, watchedCode ]);
-    const showPlusOneForm = useMemo(() => rsvpPlusOneMap[watchedCode] && watchedPlusOne, [ rsvpPlusOneMap, watchedCode, watchedPlusOne ]);
 
     useEffect(() => {
-        if (watchedCode && rsvpCountMap[watchedCode]) {
+        if (watchedCode && rsvpCountMap[watchedCode] && !errors.code) {
             const rsvpsCount = rsvpCountMap[watchedCode] + (watchedPlusOne ? 1 : 0);
 
             const refreshedRsvps = Array(rsvpsCount).fill(null).map(() => ({
@@ -33,16 +37,113 @@ export const RsvpTab = () => {
                 dietaryNeeds: ''
             }));
             replace(refreshedRsvps);
+        } else {
+            replace([]);
         }
-    }, [ watchedCode, rsvpCountMap, replace ]);
+    }, [ watchedCode, watchedPlusOne, rsvpCountMap, errors.code, replace ]);
 
-    const onsubmit = (data: RsvpData) => {
+    const onSubmit = (data: RsvpData) => {
         // TODO send email
-        setRsvpSubmitted(true);
+        //setRsvpSubmitted(true);
+        console.log(data);
     };
 
 
     return (
-        <div>RSVP</div>
+        <Content>
+            <form onSubmit={handleSubmit(onSubmit) }>
+                <div>
+                    <div>
+                        <label>RSVP Code</label>
+                        <input
+                            {...register('code')}
+                            type='text'
+                            placeholder='Enter code from invitation. Format AAA###'
+                        />
+                        {errors.code && <p>{errors.code.message}</p>}
+                    </div>
+                    {showPlusOneForm && (
+                        <div>
+                            <input 
+                                {...register('bringingPlusOne')}
+                                type='checkbox'
+                                id='bringing-plus-one-checkbox'
+                            />
+                            <label htmlFor='bringing-plus-one-checkbox'>I am bringing a plus one</label>
+                        </div>
+                    )}
+                </div>
+                {fields.length > 0 && (
+                    <div>
+                        <h3>Guest List</h3>
+                        {errors.rsvps?.root && <p>{errors.rsvps.root.message}</p>}
+                        
+                        {fields.map((field, index) => {
+                            const isAttending = watchedGuests?.[index]?.attending ?? true;
+
+                            return (
+                                <div key={`${field.id}_${index}`}>
+                                    <div>
+                                        <span>{`Guest ${index + 1}`}</span>
+                                    </div>
+
+                                    <div>
+                                        <input 
+                                            {...register(`rsvps.${index}.attending`)}
+                                            type='checkbox'
+                                        />
+                                        <label>Will be attending</label>
+                                    </div>
+
+                                    <div>
+                                        <label>Guest Name</label>
+                                        <input
+                                            {...register(`rsvps.${index}.name`)}
+                                            type='text'
+                                            placeholder='Full Name'
+                                            disabled={!isAttending}
+                                        />
+                                        {errors.rsvps?.[index]?.name && <p>{errors.rsvps[index].name?.message}</p>}
+                                    </div>
+
+                                    {showDinnerFields && (
+                                        <div>
+                                            <div>
+                                                <select 
+                                                    {...register(`rsvps.${index}.meal`)}
+                                                    disabled={!isAttending}
+                                                >
+                                                    <option value={undefined}>Select Meal...</option>
+                                                    <option value='Meat1'>Meat 1 TBD</option>
+                                                    <option value='Meat2'>Meat 2 TBD</option>
+                                                    <option value='Vegan'>Vegan TBD</option>
+                                                    <option value='Kids'>Kids (Chicken Fingers)</option>
+                                                </select>
+                                                {errors.rsvps?.[index]?.meal && <p>{errors.rsvps[index].meal?.message}</p>}
+                                            </div> 
+
+                                            <div>
+                                                <label>Dietary Needs</label>
+                                                <textarea
+                                                    {...register(`rsvps.${index}.dietaryNeeds`)}
+                                                    placeholder='None'
+                                                    disabled={!isAttending}
+                                                />
+                                            </div>
+                                        </div> 
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+                )}
+                <div>
+                    <Button 
+                        label={'Submit RSVP'}
+                        onClick={() => {'hanlded automatically by form'}}
+                    />
+                </div>
+            </form>
+        </Content>
     );
 }

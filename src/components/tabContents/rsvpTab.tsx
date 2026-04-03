@@ -9,7 +9,7 @@ import { Button } from '../button';
 
 export const RsvpTab = () => {
     const { rsvpSubmitted, setRsvpSubmitted } = useRsvp();
-    const { register, control, handleSubmit, watch, formState: { errors } } = useForm<RsvpData>({
+    const { register, control, handleSubmit, watch, setValue, formState: { errors } } = useForm<RsvpData>({
         resolver: zodResolver(rsvpSchema),
         defaultValues: rsvpDefaultValues
     });
@@ -33,7 +33,7 @@ export const RsvpTab = () => {
             const refreshedRsvps = Array(rsvpsCount).fill(null).map(() => ({
                 name: '',
                 attending: true,
-                meal: undefined,
+                meal: '',
                 dietaryNeeds: ''
             }));
             replace(refreshedRsvps);
@@ -41,6 +41,16 @@ export const RsvpTab = () => {
             replace([]);
         }
     }, [ watchedCode, watchedPlusOne, rsvpCountMap, errors.code, replace ]);
+
+    const handleAttendingChange = (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
+        const checked = event.target.checked;
+        setValue(`rsvps.${index}.attending`, checked);
+        if (!checked) {
+            setValue(`rsvps.${index}.name`, '');
+            setValue(`rsvps.${index}.meal`, '');
+            setValue(`rsvps.${index}.dietaryNeeds`, '');
+        }
+    };
 
     const onSubmit = (data: RsvpData) => {
         // TODO send email
@@ -91,6 +101,7 @@ export const RsvpTab = () => {
                                         <input 
                                             {...register(`rsvps.${index}.attending`)}
                                             type='checkbox'
+                                            onChange={(e) => handleAttendingChange(e, index)}
                                         />
                                         <label>Will be attending</label>
                                     </div>
@@ -100,7 +111,7 @@ export const RsvpTab = () => {
                                         <input
                                             {...register(`rsvps.${index}.name`)}
                                             type='text'
-                                            placeholder='Full Name'
+                                            placeholder={isAttending ? 'Full Name' : 'N/A'}
                                             disabled={!isAttending}
                                         />
                                         {errors.rsvps?.[index]?.name && <p>{errors.rsvps[index].name?.message}</p>}
@@ -113,7 +124,7 @@ export const RsvpTab = () => {
                                                     {...register(`rsvps.${index}.meal`)}
                                                     disabled={!isAttending}
                                                 >
-                                                    <option value={undefined}>Select Meal...</option>
+                                                    <option value=''>{isAttending ? 'Select Meal' : 'N/A'}</option>
                                                     <option value='Meat1'>Meat 1 TBD</option>
                                                     <option value='Meat2'>Meat 2 TBD</option>
                                                     <option value='Vegan'>Vegan TBD</option>
@@ -126,7 +137,7 @@ export const RsvpTab = () => {
                                                 <label>Dietary Needs</label>
                                                 <textarea
                                                     {...register(`rsvps.${index}.dietaryNeeds`)}
-                                                    placeholder='None'
+                                                    placeholder={isAttending ? 'Allergies , etc.' : 'N/A'}
                                                     disabled={!isAttending}
                                                 />
                                             </div>

@@ -8,10 +8,18 @@ export const rsvpSchema = z.object({
     bringingPlusOne: z.boolean(),
     rsvps: z.array(
         z.object({
-            name: z.string().min(1, 'Name is required'),
+            name: z.string().optional(),
             attending: z.boolean(),
-            meal: z.enum(DinnerChoice).optional(),
+            meal: z.union([z.enum(DinnerChoice).optional(), z.string().max(0).optional()]),
             dietaryNeeds: z.string().optional()
+        }).superRefine((guest, ctx) => {
+            if (guest.attending && (!guest.name || guest.name.trim() === '')) {
+                ctx.addIssue({
+                    code: 'custom',
+                    message: 'Name is required for attending guests.',
+                    path: ['name']
+                });
+            }
         })
     )
 }).superRefine((data, ctx) => {
@@ -24,10 +32,10 @@ export const rsvpSchema = z.object({
         });
     }
     
-    const expectedCount = rsvpCountMap[data.code] + (data.bringingPlusOne ? 1 : 0);
+    const expectedCount = (rsvpCountMap[data.code] || 0) + (data.bringingPlusOne ? 1 : 0);
     const actualCount = data.rsvps.length;
 
-    if (expectedCount !== actualCount) {
+    if (expectedCount > 0 && expectedCount !== actualCount) {
         ctx.addIssue({
             code: 'custom',
             message: `Please provide RSVP details for the ${expectedCount} invitees.`,

@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { DinnerChoice, RsvpCode, rsvpCountMap, rsvpDinnerMap, rsvpPlusOneMap } from '../constants';
 
+const stringFieldRegex =  /^[a-zA-Z0-9\s,.]*$/;
+
 export const rsvpSchema = z.object({
     code: z.enum(RsvpCode, {
         error: () => ({ message: 'Please enter a valid code. It can be found on your invitation.'})
@@ -8,10 +10,14 @@ export const rsvpSchema = z.object({
     bringingPlusOne: z.boolean(),
     rsvps: z.array(
         z.object({
-            name: z.string().optional(),
+            name: z.string().optional().refine(val => !val || stringFieldRegex.test(val), {
+                message: "Input can only contain letters, numbers, commas, and periods."
+            }),
             attending: z.boolean(),
             meal: z.union([z.enum(DinnerChoice).optional(), z.string().max(0).optional()]),
-            dietaryNeeds: z.string().optional()
+            dietaryNeeds: z.string().optional().refine(val => !val || stringFieldRegex.test(val), {
+                message: "Input can only contain letters, numbers, commas, and periods."
+            })
         }).superRefine((guest, ctx) => {
             if (guest.attending && (!guest.name || guest.name.trim() === '')) {
                 ctx.addIssue({

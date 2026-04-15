@@ -3,7 +3,7 @@ import { useForm, useFieldArray } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { RsvpData, rsvpDefaultValues, rsvpSchema, } from '../../helpers/rsvpSchema';
 import { useEffect, useMemo, useState } from 'react';
-import { rsvpCountMap, rsvpDinnerMap, rsvpPlusOneMap } from '../../constants';
+import { rsvpArrivalTime, rsvpCountMap, rsvpDinnerMap, rsvpPlusOneMap } from '../../constants';
 import { Content } from '../content';
 import { Button } from '../button';
 
@@ -23,6 +23,7 @@ export const RsvpTab = () => {
     const watchedPlusOne = watch('bringingPlusOne');
     const watchedGuests = watch('rsvps');
 
+    const arrivalTime = useMemo(() => rsvpArrivalTime[watchedCode], [ rsvpArrivalTime, watchedCode ]);
     const showPlusOneForm = useMemo(() => rsvpPlusOneMap[watchedCode], [ rsvpPlusOneMap, watchedCode ]);
     const showDinnerFields = useMemo(() => rsvpDinnerMap[watchedCode], [ rsvpDinnerMap, watchedCode ]);
 
@@ -72,6 +73,11 @@ export const RsvpTab = () => {
                         />
                         {errors.code && <p>{errors.code.message}</p>}
                     </div>
+                    {arrivalTime && (
+                        <div>
+                            <p>{`Please arrive at ${arrivalTime}`}</p>
+                        </div>
+                    )}
                     {showPlusOneForm && (
                         <div>
                             <input 

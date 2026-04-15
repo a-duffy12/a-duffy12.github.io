@@ -37,6 +37,21 @@ export enum RsvpCode {
     REC005 = 'REC005' // reception tier individual with +1 and two children
 };
 
+export const rsvpArrivalTime:  Record<RsvpCode, string> = {
+    [RsvpCode.CER001]: '3:45pm',
+    [RsvpCode.CER002]: '3:45pm',
+    [RsvpCode.CER003]: '3:45pm',
+    [RsvpCode.CER005]: '3:45pm',
+    [RsvpCode.DIN001]: '5:45pm',
+    [RsvpCode.DIN002]: '5:45pm',
+    [RsvpCode.DIN003]: '5:45pm',
+    [RsvpCode.DIN004]: '5:45pm',
+    [RsvpCode.REC001]: '8:00pm',
+    [RsvpCode.REC002]: '8:00pm',
+    [RsvpCode.REC003]: '8:00pm',
+    [RsvpCode.REC005]: '8:00pm'
+};
+
 export const rsvpPlusOneMap:  Record<RsvpCode, boolean> = {
     [RsvpCode.CER001]: true,
     [RsvpCode.CER002]: false,
@@ -83,8 +98,8 @@ export const rsvpDinnerMap: Record<RsvpCode, boolean> = {
 };
 
 export enum DinnerChoice {
-    Meat1 = 'Chicken dish', // TBD
-    Meat2 = 'Fish dish', // TBD
+    Meat1 = 'Meat1', // TBD
+    Meat2 = 'Meat2', // TBD
     Vegan = 'Vegan', // vegan TBD
-    Kids = 'Kids (chicken fingers)' // chicken fingers
+    Kids = 'Kids' // chicken fingers
 }

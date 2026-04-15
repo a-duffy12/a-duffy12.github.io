@@ -2,7 +2,7 @@ import { useRsvp } from '../../hooks/useRSVP';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { RsvpData, rsvpDefaultValues, rsvpSchema, } from '../../helpers/rsvpSchema';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import { rsvpArrivalTime, rsvpCountMap, rsvpDinnerMap, rsvpPlusOneMap } from '../../constants';
 import { Content } from '../content';
 import { Button } from '../button';

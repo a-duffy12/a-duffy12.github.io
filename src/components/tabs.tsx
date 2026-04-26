@@ -16,8 +16,12 @@ import { TransportationTab } from './tabContents/transportationTab';
 import { StagAndDoeTab } from './tabContents/stagAndDoeTab';
 
 export const Tabs = () => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const defaultToRsvp = queryParams.get('rsvp') === 'true';
     const { config } = useConfig();
-    const [ activeTab, setActiveTab ] = useState<string>('save-the-date');
+    const [ activeTab, setActiveTab ] = useState<string>(
+        defaultToRsvp ? 'rsvp' : 'save-the-date'
+    );
 
     const tabs: Tab[] = [
         {

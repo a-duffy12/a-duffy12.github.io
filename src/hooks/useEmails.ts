@@ -1,35 +1,32 @@
 import { useCallback, useState } from 'react';
-import { Drink, Meat, Rsvp, Transportation } from '../types';
 import emailjs from '@emailjs/browser';
 import { email, emailJsPublicKey, emailJsServiceId, emailJsTemplateId } from '../constants';
+import { RsvpData } from '../helpers/rsvpSchema';
 
 interface IRsvpEmailFields {
-    rsvpId: string;
-    rsvp: Rsvp[];
+    rsvp: RsvpData;
 }
 
 export const useEmails = () => {
     const [ status, setStatus ] = useState<number>();
 
-    const sendEmail = useCallback(async ({ rsvpId, rsvp }: IRsvpEmailFields) => {
+    const sendEmail = useCallback(async ({ rsvp }: IRsvpEmailFields) => {
         try {
-            const guestsString = rsvp.map(r => `
-                Name: ${r.firstName} ${r.lastName}
+            const rsvpsString = rsvp.rsvps.map(r => `
+                Name: ${r.name ?? ''}
                 Attending: ${r.attending ? 'Yes' : 'No'} 
-                Meat: ${r.meat !== null ? Meat[r.meat] : 'n/a'} 
-                Drink: ${r.drink !== null ? Drink[r.drink] : 'n/a'}  
-                Transportation: ${r.transportation !== null ? Transportation[r.transportation] : 'n/a'}
-                Notes: ${r.notes}
+                Meal: ${r.meal ?? ''}
+                Notes: ${r.dietaryNeeds ?? ''}
             `).join('\n');
 
-            const rsvpDetails = `Total attending: ${rsvp.filter(r => r.attending).length}\n 
+            const rsvpDetails = `Total attending: ${rsvp.rsvps.filter(r => r.attending).length}\n 
             Guests: \n\n
-            ${guestsString}
+            ${rsvpsString}
             `
 
             const response = await emailjs.send(emailJsServiceId, emailJsTemplateId, {
                 email: email,
-                rsvp_id: rsvpId,
+                rsvp_id: rsvp.code.toString(),
                 rsvp_details: rsvpDetails
             }, emailJsPublicKey);
             setStatus(response.status);

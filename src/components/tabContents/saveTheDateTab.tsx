@@ -1,18 +1,13 @@
-import { useEmails } from '../../hooks/useEmails';
-import { Drink, Meat, Rsvp, Transportation } from '../../types';
 import { Content } from '../content';
 import styles from '../../wedding.module.css';
-import { Button } from '../button';
 import { useEffect, useMemo, useState } from 'react';
 import { weddingDate } from '../../constants';
 import saveTheDateImage from '../../assets/images/save_the_date.png';
 import { ContentVariableWidth } from '../contentVariableWidth';
 import { Bar } from '../bar';
 import { QnA } from '../qna';
-import stageAndDoeImage from '../../assets/images/stag_and_doe.gif';
 
 export const SaveTheDateTab = () => {
-    const { sendEmail, status } = useEmails();
     const [ showCountdown, setShowCountdown ] = useState(true);
     const [ countdownTime, setCountdownTime ] = useState(0);
 
@@ -153,41 +148,6 @@ export const SaveTheDateTab = () => {
                     alt={'Aiden Duffy and Brooklyn Wright. Save the date: Saturday, August 29, 2026.'}
                 />
             </Content>
-            {/*<Content>
-                <div>
-                    <div>{'August 29, 2026'}</div>
-                    <Button label='Test email' onClick={() => sendEmail({rsvpId: '12345', rsvp: [
-                            {
-                                firstName: 'Aiden',
-                                lastName: 'Duffy',
-                                attending: true,
-                                meat: Meat.Salmon,
-                                drink: Drink.White,
-                                transportation: Transportation.Wingham,
-                                notes: ''
-                            },
-                            {
-                                firstName: 'Brooklyn',
-                                lastName: 'Wright',
-                                attending: true,
-                                meat: Meat.Beef,
-                                drink: Drink.Red,
-                                transportation: Transportation.Wingham,
-                                notes: 'lots of gravy'
-                            },
-                            {
-                                firstName: 'Mitzy',
-                                lastName: 'Cat',
-                                attending: false,
-                                meat: null,
-                                drink: null,
-                                transportation: null,
-                                notes: 'no wet food so I am not coming'
-                            }
-                        ]})}/>
-                    <div>{status}</div>
-                </div>
-            </Content>*/}
             <ContentVariableWidth>
                 <h3 className={styles.contentText}>
                     {'Schedule of Events'}

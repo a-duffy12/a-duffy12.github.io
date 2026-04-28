@@ -29,7 +29,9 @@ export const useEmails = () => {
                 rsvp_id: rsvp.code.toString(),
                 rsvp_details: rsvpDetails
             }, emailJsPublicKey);
+            
             setStatus(response.status);
+            console.log(`Email request sent with response status ${status}.`);
         } catch (error) {
             console.error(`EmailJS error: ${error}`);
             setStatus(500);

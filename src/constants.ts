@@ -113,8 +113,8 @@ export const rsvpDinnerMap: Record<RsvpCode, boolean> = {
 };
 
 export enum DinnerChoice {
-    Meat1 = 'Meat1', // chicken
-    Meat2 = 'Meat2', // salmon
+    Salmon = 'Salmon', // salmon
+    Chicken = 'Chicken', // chicken
     Vegan = 'Vegan', // vegan TBD
     Kids = 'Kids' // chicken fingers
 }

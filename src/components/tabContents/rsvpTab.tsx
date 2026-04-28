@@ -9,7 +9,7 @@ import { Button } from '../button';
 import { useEmails } from '../../hooks/useEmails';
 
 export const RsvpTab = () => {
-    const { sendEmail, status } = useEmails();
+    const { sendEmail } = useEmails();
     const { rsvpSubmitted, setRsvpSubmitted } = useRsvp();
     const { register, control, handleSubmit, watch, setValue, formState: { errors } } = useForm<RsvpData>({
         resolver: zodResolver(rsvpSchema),
@@ -56,7 +56,7 @@ export const RsvpTab = () => {
     };
 
     const onSubmit = (data: RsvpData) => {
-        //sendEmail({rsvp: data})
+        sendEmail({rsvp: data});
         setRsvpSubmitted(true);
     };
 
@@ -133,8 +133,8 @@ export const RsvpTab = () => {
                                                         disabled={!isAttending}
                                                     >
                                                         <option value=''>{isAttending ? 'Select Meal' : 'N/A'}</option>
-                                                        <option value='Meat1'>Atlantic Salmon with Maple Soy Sauce</option>
-                                                        <option value='Meat2'>Tomato- and Feta-Stuffed Chicken Breast</option>
+                                                        <option value='Salmon'>Atlantic Salmon with Maple Soy Sauce</option>
+                                                        <option value='Chicken'>Tomato- and Feta-Stuffed Chicken Breast</option>
                                                         <option value='Vegan'>Vegan TBD</option>
                                                         <option value='Kids'>Kids (Chicken Fingers and Fries)</option>
                                                     </select>

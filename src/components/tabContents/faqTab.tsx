@@ -17,7 +17,7 @@ export const FaqTab = () => {
             <Bar/>
             <QnA 
                 question={'Where can I RSVP?'} 
-                answers={['There will be an RSVP form available on this site in the spring once the physical invitations are mailed out.']} 
+                answers={['Please RSVP on the \'RSVP\' tab. You will need to provide the code on your physical invitation.']} 
             />
             <QnA 
                 question={'What are the wedding colours?'} 

@@ -56,7 +56,7 @@ export const rsvpSchema = z.object({
             if (guest.attending && !guest.meal) {
                 ctx.addIssue({
                     code: 'custom',
-                    message: 'Meal choice is required',
+                    message: 'Meal choice is required.',
                     path: ['rsvps', index, 'meal']
                 });
             }

@@ -104,7 +104,7 @@ export const RsvpTab = () => {
                     {fields.length > 0 && (
                         <>
                             <h2>Guest List</h2>
-                            {errors.rsvps?.root && <p className={styles.contentFormdError}>{errors.rsvps.root.message}</p>}
+                            {errors.rsvps?.root && <p className={styles.contentFormError}>{errors.rsvps.root.message}</p>}
                             
                             {fields.map((field, index) => {
                                 const isAttending = watchedGuests?.[index]?.attending ?? true;

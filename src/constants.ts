@@ -41,21 +41,21 @@ export enum RsvpCode {
 };
 
 export const rsvpArrivalTime:  Record<RsvpCode, string> = {
-    [RsvpCode.CER001]: '3:45pm',
-    [RsvpCode.CER002]: '3:45pm',
-    [RsvpCode.CER003]: '3:45pm',
-    [RsvpCode.CER004]: '3:45pm',
-    [RsvpCode.CER005]: '3:45pm',
-    [RsvpCode.DIN001]: '5:45pm',
-    [RsvpCode.DIN002]: '5:45pm',
-    [RsvpCode.DIN003]: '5:45pm',
-    [RsvpCode.DIN004]: '5:45pm',
-    [RsvpCode.DIN005]: '5:45pm',
-    [RsvpCode.REC001]: '8:00pm',
-    [RsvpCode.REC002]: '8:00pm',
-    [RsvpCode.REC003]: '8:00pm',
-    [RsvpCode.REC004]: '8:00pm',
-    [RsvpCode.REC005]: '8:00pm'
+    [RsvpCode.CER001]: '3:45 p.m.',
+    [RsvpCode.CER002]: '3:45 p.m.',
+    [RsvpCode.CER003]: '3:45 p.m.',
+    [RsvpCode.CER004]: '3:45 p.m.',
+    [RsvpCode.CER005]: '3:45 p.m.',
+    [RsvpCode.DIN001]: '5:45 p.m.',
+    [RsvpCode.DIN002]: '5:45 p.m.',
+    [RsvpCode.DIN003]: '5:45 p.m.',
+    [RsvpCode.DIN004]: '5:45 p.m.',
+    [RsvpCode.DIN005]: '5:45 p.m.',
+    [RsvpCode.REC001]: '8:00 p.m.',
+    [RsvpCode.REC002]: '8:00 p.m.',
+    [RsvpCode.REC003]: '8:00 p.m.',
+    [RsvpCode.REC004]: '8:00 p.m.',
+    [RsvpCode.REC005]: '8:00 p.m.'
 };
 
 export const rsvpPlusOneMap:  Record<RsvpCode, boolean> = {

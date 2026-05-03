@@ -7,6 +7,7 @@ import { rsvpArrivalTime, rsvpCountMap, rsvpDinnerMap, rsvpPlusOneMap } from '..
 import { Content } from '../content';
 import { Button } from '../button';
 import { useEmails } from '../../hooks/useEmails';
+import styles from '../../wedding.module.css';
 
 export const RsvpTab = () => {
     const { sendEmail } = useEmails();
@@ -63,105 +64,111 @@ export const RsvpTab = () => {
     return (
         <Content>
             {rsvpSubmitted 
-                ? <div>RSVP has been received.</div>
-                : <form onSubmit={handleSubmit(onSubmit) }>
-                    <div>
-                        <div>
-                            <label>RSVP Code</label>
+                ? <div className={styles.contentText}>
+                    RSVP has been received.
+                </div>
+                : <form className={styles.contentForm} onSubmit={handleSubmit(onSubmit) }>
+                    <div className={styles.contentFormSection}>
+                        <div className={styles.contentFormField}>
+                            <label className={styles.contentFormFieldLabel} htmlFor='rsvp-code-input'>RSVP Code</label>
                             <input
+                                className={styles.contentFormFieldTextInput}
                                 {...register('code')}
                                 type='text'
                                 placeholder='Enter code from invitation. Format AAA###'
+                                id='rsvp-code-input'
                             />
-                            {errors.code && <p>{errors.code.message}</p>}
+                            {errors.code && <p className={styles.contentFormFieldError}>{errors.code.message}</p>}
                         </div>
                         {arrivalTime && (
                             <div>
-                                <p>{`Please arrive at ${arrivalTime}`}</p>
+                                <p className={styles.contentFormText}>{`Please arrive at ${arrivalTime}`}</p>
                             </div>
                         )}
                         {showPlusOneForm && (
-                            <div>
+                            <div className={styles.contentFormFieldCheckbox}>
                                 <input 
                                     {...register('bringingPlusOne')}
                                     type='checkbox'
                                     id='bringing-plus-one-checkbox'
                                 />
-                                <label htmlFor='bringing-plus-one-checkbox'>I am bringing a plus one</label>
+                                <label className={styles.contentFormFieldCheckboxLabel} htmlFor='bringing-plus-one-checkbox'>I am bringing a plus one</label>
                             </div>
                         )}
                     </div>
                     {fields.length > 0 && (
-                        <div>
-                            <h3>Guest List</h3>
-                            {errors.rsvps?.root && <p>{errors.rsvps.root.message}</p>}
+                        <>
+                            <h2>Guest List</h2>
+                            {errors.rsvps?.root && <p className={styles.contentFormdError}>{errors.rsvps.root.message}</p>}
                             
                             {fields.map((field, index) => {
                                 const isAttending = watchedGuests?.[index]?.attending ?? true;
 
                                 return (
-                                    <div key={`${field.id}_${index}`}>
-                                        <div>
-                                            <span>{`Guest ${index + 1}`}</span>
-                                        </div>
+                                    <div className={styles.contentFormSection} key={`${field.id}_${index}`}>
+                                        <h3>{`Guest ${index + 1}`}</h3>
 
-                                        <div>
+                                        <div className={styles.contentFormFieldCheckbox}>
                                             <input 
                                                 {...register(`rsvps.${index}.attending`)}
                                                 type='checkbox'
                                                 onChange={(e) => handleAttendingChange(e, index)}
+                                                id={`attending-${index}-checkbox`}
                                             />
-                                            <label>Will be attending</label>
+                                            <label className={styles.contentFormFieldCheckboxLabel} htmlFor={`attending-${index}-checkbox`}>Will be attending</label>
                                         </div>
 
-                                        <div>
-                                            <label>Guest Name</label>
+                                        <div className={styles.contentFormField}>
+                                            <label className={styles.contentFormFieldLabel} htmlFor={`name-${index}-input`}>Guest Name</label>
                                             <input
+                                                className={styles.contentFormFieldTextInput}
                                                 {...register(`rsvps.${index}.name`)}
                                                 type='text'
                                                 placeholder={isAttending ? 'Full Name' : 'N/A'}
                                                 disabled={!isAttending}
+                                                id={`name-${index}-input`}
                                             />
-                                            {errors.rsvps?.[index]?.name && <p>{errors.rsvps[index].name?.message}</p>}
+                                            {errors.rsvps?.[index]?.name && <p className={styles.contentFormFieldError}>{errors.rsvps[index].name?.message}</p>}
                                         </div>
 
                                         {showDinnerFields && (
-                                            <div>
-                                                <div>
+                                            <>
+                                                <div className={styles.contentFormField}>
+                                                    <label className={styles.contentFormFieldLabel} htmlFor={`meal-${index}-select`}>Meal Choice</label>
                                                     <select 
                                                         {...register(`rsvps.${index}.meal`)}
                                                         disabled={!isAttending}
+                                                        id={`meal-${index}-select`}
                                                     >
-                                                        <option value=''>{isAttending ? 'Select Meal' : 'N/A'}</option>
+                                                        <option value=''>{isAttending ? 'Select meal...' : 'N/A'}</option>
                                                         <option value='Salmon'>Atlantic Salmon with Maple Soy Sauce</option>
                                                         <option value='Chicken'>Tomato- and Feta-Stuffed Chicken Breast</option>
                                                         <option value='Vegan'>Vegan TBD</option>
                                                         <option value='Kids'>Kids (Chicken Fingers and Fries)</option>
                                                     </select>
-                                                    {errors.rsvps?.[index]?.meal && <p>{errors.rsvps[index].meal?.message}</p>}
+                                                    {errors.rsvps?.[index]?.meal && <p className={styles.contentFormFieldError}>{errors.rsvps[index].meal?.message}</p>}
                                                 </div> 
 
-                                                <div>
-                                                    <label>Dietary Needs</label>
+                                                <div className={styles.contentFormField}>
+                                                    <label className={styles.contentFormFieldLabel} htmlFor={`dietary-needs-${index}-input`}>Dietary Needs</label>
                                                     <textarea
                                                         {...register(`rsvps.${index}.dietaryNeeds`)}
-                                                        placeholder={isAttending ? 'Allergies , etc.' : 'N/A'}
+                                                        placeholder={isAttending ? 'Allergies, etc.' : 'N/A'}
                                                         disabled={!isAttending}
+                                                        id={`dietary-needs-${index}-input`}
                                                     />
                                                 </div>
-                                            </div> 
+                                            </> 
                                         )}
                                     </div>
                                 );
                             })}
-                        </div>
+                        </>
                     )}
-                    <div>
-                        <Button 
-                            label={'Submit RSVP'}
-                            onClick={() => {'handled automatically by form'}}
-                        />
-                    </div>
+                    <Button 
+                        label={'Submit'}
+                        onClick={() => {'handled automatically by form'}}
+                    />
                 </form>
             }
         </Content>

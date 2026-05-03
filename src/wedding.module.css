@@ -211,6 +211,60 @@
           height: 100%;
           aspect-ratio: 2 / 3; /* 2 width to 3 height */
         }
+
+        .contentForm {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          align-items: center;
+          justify-content: center;
+          width: 75%;
+
+          .contentFormSection {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+
+            .contentFormField {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              justify-content: flex-start;
+              width: 100%;
+
+              .contentFormFieldLabel {
+                font-weight: 700;
+              }
+
+              .contentFormFieldTextInput {
+                
+              }
+
+              .contentFormFieldError {
+                color: red;
+              }
+            } 
+
+            .contentFormError {
+              color: red;
+            }
+            
+            .contentFormText {
+              font-weight: 700;
+            }
+
+            .contentFormFieldCheckbox {
+              display: flex;
+              flex-direction: row;
+              gap: 8px;
+
+              .contentFormFieldCheckboxLabel {
+                font-weight: 400;
+              }
+            }
+          }
+        }
       }
 
       .contentDesktop {

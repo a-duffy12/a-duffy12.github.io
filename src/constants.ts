@@ -8,7 +8,7 @@ export const configInitialState: Config = {
     lodgingEnabled: true,
     registryEnabled: true,
     weddingPartyEnabled: false,
-    rsvpEnabled: false,
+    rsvpEnabled: true,
     photoGalleryEnabled: false,
     stagAndDoeEnabled: true
 }

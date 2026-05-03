@@ -8,10 +8,12 @@ import { Content } from '../content';
 import { Button } from '../button';
 import { useEmails } from '../../hooks/useEmails';
 import styles from '../../wedding.module.css';
+import { useMobile } from '../../hooks/useMobile';
 
 export const RsvpTab = () => {
     const { sendEmail } = useEmails();
     const { rsvpSubmitted, setRsvpSubmitted } = useRsvp();
+    const { isMobile} = useMobile();
     const { register, control, handleSubmit, watch, setValue, formState: { errors } } = useForm<RsvpData>({
         resolver: zodResolver(rsvpSchema),
         defaultValues: rsvpDefaultValues
@@ -75,7 +77,10 @@ export const RsvpTab = () => {
                                 className={styles.contentFormFieldTextInput}
                                 {...register('code')}
                                 type='text'
-                                placeholder='Enter code from invitation. Format AAA###'
+                                placeholder={isMobile
+                                    ? 'Enter code from invitation'
+                                    : 'Enter code from invitation, format AAA###'
+                                }
                                 id='rsvp-code-input'
                             />
                             {errors.code && <p className={styles.contentFormFieldError}>{errors.code.message}</p>}

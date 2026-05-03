@@ -147,9 +147,9 @@ export const RsvpTab = () => {
                                                     >
                                                         <option value=''>{isAttending ? 'Select meal...' : 'N/A'}</option>
                                                         <option value='Salmon'>Atlantic Salmon with Maple Soy Sauce</option>
-                                                        <option value='Chicken'>Tomato- and Feta-Stuffed Chicken Breast</option>
-                                                        <option value='Vegan'>Vegan TBD</option>
-                                                        <option value='Kids'>Kids (Chicken Fingers and Fries)</option>
+                                                        <option value='Chicken'>Chicken Breast Stuffed with Tomatoes & Feta</option>
+                                                        <option value='Vegan'>Grilled Halloumi & Mediterranean Vegetables (Vegetarian)</option>
+                                                        <option value='Kids'>Chicken Fingers & Fries (Kids')</option>
                                                     </select>
                                                     {errors.rsvps?.[index]?.meal && <p className={styles.contentFormFieldError}>{errors.rsvps[index].meal?.message}</p>}
                                                 </div> 

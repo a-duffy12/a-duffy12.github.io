@@ -41,11 +41,11 @@ export enum RsvpCode {
 };
 
 export const rsvpArrivalTime:  Record<RsvpCode, string> = {
-    [RsvpCode.CER001]: '3:45 p.m.',
-    [RsvpCode.CER002]: '3:45 p.m.',
-    [RsvpCode.CER003]: '3:45 p.m.',
-    [RsvpCode.CER004]: '3:45 p.m.',
-    [RsvpCode.CER005]: '3:45 p.m.',
+    [RsvpCode.CER001]: '3:30 p.m.',
+    [RsvpCode.CER002]: '3:30 p.m.',
+    [RsvpCode.CER003]: '3:30 p.m.',
+    [RsvpCode.CER004]: '3:30 p.m.',
+    [RsvpCode.CER005]: '3:30 p.m.',
     [RsvpCode.DIN001]: '5:45 p.m.',
     [RsvpCode.DIN002]: '5:45 p.m.',
     [RsvpCode.DIN003]: '5:45 p.m.',

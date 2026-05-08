@@ -6,6 +6,7 @@ import saveTheDateImage from '../../assets/images/save_the_date.png';
 import { ContentVariableWidth } from '../contentVariableWidth';
 import { Bar } from '../bar';
 import { QnA } from '../qna';
+import { ScheduleItem } from '../scheduleItem';
 
 export const SaveTheDateTab = () => {
     const [ showCountdown, setShowCountdown ] = useState(true);
@@ -153,21 +154,25 @@ export const SaveTheDateTab = () => {
                     {'Schedule of Events'}
                 </h3>
                 <Bar/>
-                <QnA 
-                    question={'Ceremony'}
-                    answers={['4:00 PM']}
+                <ScheduleItem 
+                    item={'Ceremony'}
+                    time={'4:00 PM'}
+                    timeNote={'Please arrive at 3:30 PM'}
                 />
-                <QnA 
-                    question={'Cocktail Hour'}
-                    answers={['4:30 PM']}
+                <ScheduleItem 
+                    item={'Cocktail Hour'}
+                    time={'4:30 PM'}
+                    timeNote={''}
                 />
-                <QnA 
-                    question={'Dinner'}
-                    answers={['6:00 PM']}
+                <ScheduleItem 
+                    item={'Dinner'}
+                    time={'6:00 PM'}
+                    timeNote={'Please arrive at 5:45 PM'}
                 />
-                <QnA 
-                    question={'Reception'}
-                    answers={['8:00 PM']}
+                <ScheduleItem 
+                    item={'Reception'}
+                    time={'8:00 PM'}
+                    timeNote={''}
                 />
             </ContentVariableWidth>
             <Content>

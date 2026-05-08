@@ -206,6 +206,10 @@
           padding-bottom: 12px;
         }
 
+        .contentTextNote {
+          font-size: 14px;
+        }
+
         .contentImage {
           width: 100%;
           height: 100%;
@@ -333,6 +337,10 @@
 
         .contentBreak {
           padding-bottom: 12px;
+        }
+
+        .contentTextNote {
+          font-size: 14px;
         }
       }
     }

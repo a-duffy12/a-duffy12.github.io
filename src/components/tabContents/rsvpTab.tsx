@@ -162,6 +162,7 @@ export const RsvpTab = () => {
                                                         disabled={!isAttending}
                                                         id={`dietary-needs-${index}-input`}
                                                     />
+                                                    {errors.rsvps?.[index]?.dietaryNeeds && <p className={styles.contentFormFieldError}>{errors.rsvps[index].dietaryNeeds?.message}</p>}
                                                 </div>
                                             </> 
                                         )}

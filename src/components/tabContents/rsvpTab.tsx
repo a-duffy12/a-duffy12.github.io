@@ -150,6 +150,7 @@ export const RsvpTab = () => {
                                                         <option value='Chicken'>Chicken Breast Stuffed with Tomatoes & Feta</option>
                                                         <option value='Vegan'>Grilled Halloumi & Mediterranean Vegetables (Vegetarian)</option>
                                                         <option value='Kids'>Chicken Fingers & Fries (Kids')</option>
+                                                        <option value='None'>None (Infants')</option>
                                                     </select>
                                                     {errors.rsvps?.[index]?.meal && <p className={styles.contentFormFieldError}>{errors.rsvps[index].meal?.message}</p>}
                                                 </div> 

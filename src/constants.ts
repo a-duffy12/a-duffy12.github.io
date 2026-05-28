@@ -116,5 +116,6 @@ export enum DinnerChoice {
     Salmon = 'Salmon', // salmon
     Chicken = 'Chicken', // chicken
     Vegan = 'Vegan', // vegan TBD
-    Kids = 'Kids' // chicken fingers
+    Kids = 'Kids', // chicken fingers,
+    None = 'None' // for children
 }

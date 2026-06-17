@@ -10,7 +10,7 @@ export const StagAndDoeTab = () => {
         <>
             <Content>
                 <img
-                    className={styles.contentImage}
+                    className={styles.contentImageTwoToThree}
                     src={stageAndDoeImage}
                     alt={'Stag and Doe, June 27, 2026. 7 PM to 12 AM. Donation bar, games and prizes, 50-50 draw, campfire and good. 30 Bristol Terrace, Wingham. Parking available at BIAX international.'}
                 />

@@ -7,6 +7,7 @@ import { ContentVariableWidth } from '../contentVariableWidth';
 import { Bar } from '../bar';
 import { QnA } from '../qna';
 import { ScheduleItem } from '../scheduleItem';
+import golfCourseDetourImage from '../../assets/images/golf_course_detour.jpg';
 
 export const SaveTheDateTab = () => {
     const [ showCountdown, setShowCountdown ] = useState(true);
@@ -144,7 +145,7 @@ export const SaveTheDateTab = () => {
             </ContentVariableWidth>
             <Content>
                 <img 
-                    className={styles.contentImage}
+                    className={styles.contentImageTwoToThree}
                     src={saveTheDateImage}
                     alt={'Aiden Duffy and Brooklyn Wright. Save the date: Saturday, August 29, 2026.'}
                 />
@@ -187,6 +188,19 @@ export const SaveTheDateTab = () => {
                 <div className={styles.mapContainer}>
                     <iframe className={styles.mapFrame} src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Listowel%20golf%20club)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'/>
                 </div>
+                <QnA 
+                    question={'Due to the current road closure, the normal access from Fairlane Road to the golf course is not available at this time.'}
+                    answers={[
+                        'Guests can now access the golf course using the new temporary access road off Highway 23 / Wallace Avenue South.',
+                        'The entrance is located between Fast Stop and Hearing Life.',
+                        'From there, the access road runs straight through toward Fairlane Road and connects into the golf course area.'
+                    ]}
+                /> 
+                <img 
+                    className={styles.contentImageTwoToOne}
+                    src={golfCourseDetourImage}
+                    alt={'Temporary access road to Fairlane Road from Wallace Avenue North across from Fletcher\'s Landscaping'}
+                />
             </Content>
         </>
     );

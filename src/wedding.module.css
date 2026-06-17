@@ -210,10 +210,17 @@
           font-size: 14px;
         }
 
-        .contentImage {
+        .contentImageTwoToThree {
           width: 100%;
           height: 100%;
           aspect-ratio: 2 / 3; /* 2 width to 3 height */
+        }
+
+        .contentImageTwoToOne {
+          width: 100%;
+          height: 100%;
+          aspect-ratio: 2 / 1; /* 2 width to 1 height */
+          border: var(--theme_dark_green) 3px solid;
         }
 
         .contentForm {

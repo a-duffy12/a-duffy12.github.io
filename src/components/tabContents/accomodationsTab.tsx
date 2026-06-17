@@ -24,6 +24,15 @@ export const AccomodationsTab = () => {
                     {'Located a five minute drive away from the venue. Book under \'Brooklyn and Aiden\' to be grouped near other guests.'}
                 </p>
                 <p className={styles.contentText}>
+                    {'Transportation to and from this location will be available.'}
+                </p>
+                <p className={styles.contentText}>
+                    {'Check-in opens at 3pm. Early check-in after 2pm is complimentary but subject to availability.'}
+                </p>
+                <p className={styles.contentText}>
+                    {'If you require an earlier check-in, there are limited number of paid priority check-ins starting at 12:30pm for a fee of $25.'}
+                </p>
+                <p className={styles.contentText}>
                     {'This motel does have another wedding the same weekend. Booking early is encouraged. No rooms are reserved.'}
                 </p>
                 <Button label={'Visit Site'} onClick={openListowelCountryInnPage}/>

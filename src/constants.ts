@@ -10,7 +10,7 @@ export const configInitialState: Config = {
     weddingPartyEnabled: false,
     rsvpEnabled: true,
     photoGalleryEnabled: false,
-    stagAndDoeEnabled: true
+    stagAndDoeEnabled: false
 }
 
 export const email = 'brooklynaiden2026@gmail.com';

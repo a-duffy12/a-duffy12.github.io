@@ -10,6 +10,7 @@
   --theme_honey: #d19600;
   --theme_dark_green: #1d2b17;
   --theme_green: #4c6136;
+  --theme_light_green: #91978a;
   /*alex brush*/
 
   font-family: 'Alice', serif;
@@ -275,6 +276,43 @@
               }
             }
           }
+        }
+
+        .transportationTable {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          table-layout: fixed;
+
+          border-collapse: separate;
+          border-spacing: 0;
+          border: 1px solid var(--theme_dark_green);
+          border-radius: 8px;
+          overflow: hidden;
+        }
+
+        .transportationTable th, 
+        .transportationTable td {
+          padding: 8px 16px;
+          text-align: left;
+          border-bottom: 1px solid var(--theme_dark_green);
+          
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+
+        .transportationTable tr:last-child td {
+          border-bottom: 8px double var(--theme_dark_green);
+        }
+
+        .transportationTable th {
+          background-color: var(--theme_dark_green);
+          font-weight: 600;
+          color: var(--theme_white);
+        }
+
+        .transportationTable tr:hover {
+          background-color: var(--theme_light_green);
         }
       }
 

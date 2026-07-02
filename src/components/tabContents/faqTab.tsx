@@ -39,6 +39,10 @@ export const FaqTab = () => {
                     answers={['Yes. The ceremony, cocktail hour, dinner, and reception are all at the Listowel Golf Club.']} 
                 />
                 <QnA 
+                    question={'Are ceremony and dinner guests also invited to the reception?'} 
+                    answers={['Yes, all guests are welcome to stay to the end of the night.']} 
+                />
+                <QnA 
                     question={'Will the wedding be indoors or outdoors?'} 
                     answers={['The ceremony will be outdoors. Cocktail hour is split between an indoor space and an outdoor patio. Dinner and reception are indoors, with the outdoor patio remaining open. In the event of rain, the ceremony will be held indoors.']} 
                 />
@@ -132,6 +136,10 @@ export const FaqTab = () => {
                     <QnA 
                         question={'Is everything at the same location?'} 
                         answers={['Yes. The ceremony, cocktail hour, dinner, and reception are all at the Listowel Golf Club.']} 
+                    />
+                    <QnA 
+                        question={'Are ceremony and dinner guests also invited to the reception?'} 
+                        answers={['Yes, all guests are welcome to stay to the end of the night.']} 
                     />
                     <QnA 
                         question={'Will the ceremony be unplugged?'} 

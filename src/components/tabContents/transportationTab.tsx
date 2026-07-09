@@ -7,7 +7,7 @@ export const TransportationTab = () => {
         <>
         <Content>
             <h3 className={styles.contentText}>
-                {'Transporation'}
+                {'Transportation'}
             </h3>
             <Bar/>
             <table className={styles.transportationTable}>

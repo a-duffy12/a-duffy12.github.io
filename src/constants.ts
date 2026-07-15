@@ -1,4 +1,4 @@
-import { Config } from './types';
+import { Config, GalleryImage } from './types';
 
 export const configInitialState: Config = {
     savetheDateEnabled: true,
@@ -119,3 +119,11 @@ export enum DinnerChoice {
     Kids = 'Kids', // chicken fingers,
     None = 'None' // for children
 }
+
+export const galleryImages: GalleryImage[] = [
+    {
+        id: 1,
+        url: 'https://drive.google.com/file/d/1OsIeUWzw_YCyfKmvRCnACHy1GT9NqYjQ/view?usp=sharing',
+        caption: 'test caption'
+    }
+];

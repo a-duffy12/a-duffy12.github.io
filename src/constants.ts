@@ -9,7 +9,7 @@ export const configInitialState: Config = {
     registryEnabled: true,
     weddingPartyEnabled: false,
     rsvpEnabled: true,
-    photoGalleryEnabled: true,
+    photoGalleryEnabled: false,
     stagAndDoeEnabled: false
 }
 

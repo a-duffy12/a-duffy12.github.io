@@ -22,7 +22,7 @@ export type Tab = {
 }
 
 export type GalleryImage = {
-    id: number;
+    id: string;
     url: string;
     caption: string;
 }

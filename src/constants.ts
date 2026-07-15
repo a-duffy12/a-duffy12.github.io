@@ -9,7 +9,7 @@ export const configInitialState: Config = {
     registryEnabled: true,
     weddingPartyEnabled: false,
     rsvpEnabled: true,
-    photoGalleryEnabled: false,
+    photoGalleryEnabled: true,
     stagAndDoeEnabled: false
 }
 
@@ -122,7 +122,7 @@ export enum DinnerChoice {
 
 export const galleryImages: GalleryImage[] = [
     {
-        id: 1,
+        id: 'test',
         url: 'https://drive.google.com/file/d/1OsIeUWzw_YCyfKmvRCnACHy1GT9NqYjQ/view?usp=sharing',
         caption: 'test caption'
     }

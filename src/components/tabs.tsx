@@ -20,7 +20,7 @@ export const Tabs = () => {
     const defaultToRsvp = queryParams.get('rsvp') === 'true';
     const { config } = useConfig();
     const [ activeTab, setActiveTab ] = useState<string>(
-        defaultToRsvp ? 'rsvp' : 'save-the-date'
+        defaultToRsvp && config.rsvpEnabled ? 'rsvp' : 'save-the-date'
     );
 
     const tabs: Tab[] = [

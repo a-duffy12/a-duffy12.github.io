@@ -1,4 +1,4 @@
-import { Config, GalleryImage } from './types';
+import { Config } from './types';
 
 export const configInitialState: Config = {
     savetheDateEnabled: true,
@@ -9,7 +9,7 @@ export const configInitialState: Config = {
     registryEnabled: true,
     weddingPartyEnabled: false,
     rsvpEnabled: true,
-    photoGalleryEnabled: false,
+    photoGalleryEnabled: true,
     stagAndDoeEnabled: false
 }
 
@@ -21,6 +21,7 @@ export const emailJsPublicKey = 'sOz0m0b2U13Lm27Tm';
 export const weddingDate = new Date(2026, 7, 29, 16, 0);
 export const stagAndDoeDate = new Date(2026, 5, 27, 19, 0);
 export const registryLink = 'https://www.myregistry.com/wedding-registry/aiden-duffy-and-brooklyn-wright-wingham-on/5068274';
+export const webUploaderLink = 'https://weduploader.com/upload/cdPistze3XYilFAp';
 
 export enum RsvpCode {
     CER001 = 'CER001', // ceremony tier individual with +1
@@ -119,11 +120,3 @@ export enum DinnerChoice {
     Kids = 'Kids', // chicken fingers,
     None = 'None' // for children
 }
-
-export const galleryImages: GalleryImage[] = [
-    {
-        id: 'test',
-        url: 'https://drive.google.com/file/d/1OsIeUWzw_YCyfKmvRCnACHy1GT9NqYjQ/view?usp=sharing',
-        caption: 'test caption'
-    }
-];

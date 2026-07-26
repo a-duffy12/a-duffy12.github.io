@@ -20,9 +20,3 @@ export type Tab = {
     icon: IconType | null;
     enabled: boolean;
 }
-
-export type GalleryImage = {
-    id: string;
-    url: string;
-    caption: string;
-}

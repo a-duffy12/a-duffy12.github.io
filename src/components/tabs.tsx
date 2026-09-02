@@ -3,7 +3,7 @@ import { useConfig } from '../contexts/configContext';
 import { Tab } from '../types';
 import styles from '../wedding.module.css';
 import { TabButton } from './tabButton';
-import { FaBed, FaBus, FaBusAlt, FaCalendarCheck, FaCamera, FaCar, FaCarAlt, FaCarSide, FaEnvelope, FaGift, FaGlassCheers, FaHome, FaQuestionCircle, FaUserTie } from 'react-icons/fa';
+import { FaBed, FaCalendarCheck, FaCamera, FaCarSide, FaEnvelope, FaGift, FaGlassCheers, FaHome, FaMicrophone, FaQuestionCircle, FaUserTie } from 'react-icons/fa';
 import { SaveTheDateTab } from './tabContents/saveTheDateTab';
 import { ContactUsTab } from './tabContents/contactUsTab';
 import { FaqTab } from './tabContents/faqTab';
@@ -65,6 +65,12 @@ export const Tabs = () => {
             label: 'Party',
             icon: FaUserTie,
             enabled: config.weddingPartyEnabled
+        },
+        {
+            id: 'vendors',
+            label: 'Vendors',
+            icon: FaMicrophone,
+            enabled: config.vendorsEnabled
         },
         {
             id: 'gallery',

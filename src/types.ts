@@ -12,6 +12,7 @@ export type Config = {
     rsvpEnabled: boolean;
     photoGalleryEnabled: boolean;
     stagAndDoeEnabled: boolean;
+    vendorsEnabled: boolean;
 }
 
 export type Tab = {

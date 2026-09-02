@@ -138,70 +138,81 @@ export const SaveTheDateTab = () => {
                             </div>
                         </div>
                     )
-                    : <div>
-                        <h2>{'Congratulations Brooklyn and Aiden!'}</h2>
-                    </div>
+                    : (stackCountdown ?
+                        <div>
+                            <h3>{'Congratulations'}</h3>
+                            <h3>{'Brooklyn and Aiden!'}</h3>
+                        </div>
+                        : <div>
+                            <h2>{'Congratulations Brooklyn and Aiden!'}</h2>
+                        </div>
+                    )
                 }                
             </ContentVariableWidth>
-            <Content>
-                <img 
-                    className={styles.contentImageTwoToThree}
-                    src={saveTheDateImage}
-                    alt={'Aiden Duffy and Brooklyn Wright. Save the date: Saturday, August 29, 2026.'}
-                />
-            </Content>
-            <ContentVariableWidth>
-                <h3 className={styles.contentText}>
-                    {'Schedule of Events'}
-                </h3>
-                <Bar/>
-                <ScheduleItem 
-                    item={'Ceremony'}
-                    time={'4:00 PM'}
-                    timeNote={'Please arrive at 3:30 PM'}
-                />
-                <ScheduleItem 
-                    item={'Cocktail Hour'}
-                    time={'4:30 PM'}
-                    timeNote={''}
-                />
-                <ScheduleItem 
-                    item={'Dinner'}
-                    time={'6:00 PM'}
-                    timeNote={'Please arrive at 5:45 PM'}
-                />
-                <ScheduleItem 
-                    item={'Reception'}
-                    time={'8:00 PM'}
-                    timeNote={''}
-                />
-            </ContentVariableWidth>
-            <Content>
-                <h3 className={styles.contentText}>
-                    {'Venue'}
-                </h3>
-                <Bar/>
-                <QnA 
-                    question={'Listowel Golf Club'}
-                    answers={['8380 Fairlane Rd, Listowel']}
-                />               
-                <div className={styles.mapContainer}>
-                    <iframe className={styles.mapFrame} src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Listowel%20golf%20club)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'/>
-                </div>
-                <QnA 
-                    question={'Due to the current road closure, the normal access from Fairlane Road to the golf course is not available at this time.'}
-                    answers={[
-                        'Guests can now access the golf course using the new temporary access road off Highway 23 / Wallace Avenue South.',
-                        'The entrance is located between Fast Stop and Hearing Life.',
-                        'From there, the access road runs straight through toward Fairlane Road and connects into the golf course area.'
-                    ]}
-                /> 
-                <img 
-                    className={styles.contentImageTwoToOne}
-                    src={golfCourseDetourImage}
-                    alt={'Temporary access road to Fairlane Road from Wallace Avenue North across from Fletcher\'s Landscaping'}
-                />
-            </Content>
+            {showCountdown ? 
+                <>
+                    <Content>
+                        <img 
+                            className={styles.contentImageTwoToThree}
+                            src={saveTheDateImage}
+                            alt={'Aiden Duffy and Brooklyn Wright. Save the date: Saturday, August 29, 2026.'}
+                        />
+                    </Content>
+                    <ContentVariableWidth>
+                        <h3 className={styles.contentText}>
+                            {'Schedule of Events'}
+                        </h3>
+                        <Bar/>
+                        <ScheduleItem 
+                            item={'Ceremony'}
+                            time={'4:00 PM'}
+                            timeNote={'Please arrive at 3:30 PM'}
+                        />
+                        <ScheduleItem 
+                            item={'Cocktail Hour'}
+                            time={'4:30 PM'}
+                            timeNote={''}
+                        />
+                        <ScheduleItem 
+                            item={'Dinner'}
+                            time={'6:00 PM'}
+                            timeNote={'Please arrive at 5:45 PM'}
+                        />
+                        <ScheduleItem 
+                            item={'Reception'}
+                            time={'8:00 PM'}
+                            timeNote={''}
+                        />
+                    </ContentVariableWidth>
+                    <Content>
+                        <h3 className={styles.contentText}>
+                            {'Venue'}
+                        </h3>
+                        <Bar/>
+                        <QnA 
+                            question={'Listowel Golf Club'}
+                            answers={['8380 Fairlane Rd, Listowel']}
+                        />               
+                        <div className={styles.mapContainer}>
+                            <iframe className={styles.mapFrame} src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Listowel%20golf%20club)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'/>
+                        </div>
+                        <QnA 
+                            question={'Due to the current road closure, the normal access from Fairlane Road to the golf course is not available at this time.'}
+                            answers={[
+                                'Guests can now access the golf course using the new temporary access road off Highway 23 / Wallace Avenue South.',
+                                'The entrance is located between Fast Stop and Hearing Life.',
+                                'From there, the access road runs straight through toward Fairlane Road and connects into the golf course area.'
+                            ]}
+                        /> 
+                        <img 
+                            className={styles.contentImageTwoToOne}
+                            src={golfCourseDetourImage}
+                            alt={'Temporary access road to Fairlane Road from Wallace Avenue North across from Fletcher\'s Landscaping'}
+                        />
+                    </Content>
+                </>
+                : <></>
+            }
         </>
     );
 }

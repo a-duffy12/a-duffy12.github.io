@@ -3,14 +3,15 @@ import { Config } from './types';
 export const configInitialState: Config = {
     savetheDateEnabled: true,
     contactUsEnabled: false,
-    faqEnabled: true,
-    transportationEnabled: true,
-    lodgingEnabled: true,
-    registryEnabled: true,
+    faqEnabled: false,
+    transportationEnabled: false,
+    lodgingEnabled: false,
+    registryEnabled: false,
     weddingPartyEnabled: false,
     rsvpEnabled: false,
     photoGalleryEnabled: true,
-    stagAndDoeEnabled: false
+    stagAndDoeEnabled: false,
+    vendorsEnabled: false
 }
 
 export const email = 'brooklynaiden2026@gmail.com';

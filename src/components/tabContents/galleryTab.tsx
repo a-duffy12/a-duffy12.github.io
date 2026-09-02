@@ -21,7 +21,7 @@ export const GalleryTab = () => {
                 </h3>
                 <Bar/>
                 <p className={styles.contentText}>
-                    {'The link below will take you to our gallery where you are able to upload any photos you take at our wedding.'}
+                    {'The link below will take you to our gallery where you are able to upload any photos you took at our wedding.'}
                 </p>
                 <p className={styles.contentText}>
                     {'We will add our professional photographs there once we have access to them.'}

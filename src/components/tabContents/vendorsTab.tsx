@@ -2,55 +2,84 @@ import { Bar } from '../bar';
 import { Content } from '../content';
 import styles from '../../wedding.module.css';
 import { QnA } from '../qna';
+import { LabelLink } from '../labelLink';
 
-export const FaqTab = () => {
+export const VendorsTab = () => {
 
     return (
         <>
              <Content>
                 <h3 className={styles.contentText}>
-                    {'Ceremony Flautist'}
+                    {'Musicians'}
                 </h3>
+                <Bar/>
+                <LabelLink 
+                    title={'Sofiia – Ceremony Flautist'}
+                    label={'Contact via Gigsalad'}
+                    link={'https://www.gigsalad.com/sofiia_saxophone_flute_player_toronto'}
+                />
+                <LabelLink 
+                    title={'Graham Bedard – Cocktail Guitarist'}
+                    label={'Contact via Instagram'}
+                    link={'https://www.instagram.com/grahambedardmusic/?hl=en'}
+                />
             </Content>
             <Content>
                 <h3 className={styles.contentText}>
-                    {'Cocktail Guitarist'}
+                    {'Ceremony Vendors'}
                 </h3>
+                <Bar/>
+                <QnA 
+                    question={'Maggie Speer – Officiant'}
+                    answers={['Booked through the Township of North Huron']}
+                />
+                <LabelLink
+                    title={'Tiffany Chantel – Photographer'}
+                    label={'Mildmay'}
+                    link={'https://tiffanychantelphotography.mypixieset.com/'}
+                />
+                <LabelLink
+                    title={'Elora St. Flowers – Florals'}
+                    label={'Harriston'}
+                    link={'https://elorastflowers.ca/'}
+                />
             </Content>
             <Content>
                 <h3 className={styles.contentText}>
-                    {'Photographer'}
+                    {'Beauty Vendors'}
                 </h3>
+                <Bar/>
+                <LabelLink 
+                    title={'Erin Bolger – Makeup Artist'}
+                    label={'Brussels'}
+                    link={'https://erinbolgermua.wixsite.com/makeup'}
+                />
+                <LabelLink 
+                    title={'Hair Connection – Hair Stylists'}
+                    label={'Kincardine'}
+                    link={'https://www.hairconnectionsalon.com/'}
+                />
+                <LabelLink 
+                    title={'G Nails & Spa – Nail Salon'}
+                    label={'Goderich'}
+                    link={'https://gnailsandspa.ca/'}
+                />
             </Content>
             <Content>
                 <h3 className={styles.contentText}>
-                    {'Officiant'}
+                    {'Style Vendors'}
                 </h3>
-            </Content>
-            <Content>
-                <h3 className={styles.contentText}>
-                    {'Florals'}
-                </h3>
-            </Content>
-            <Content>
-                <h3 className={styles.contentText}>
-                    {'Makeup Artist'}
-                </h3>
-            </Content>
-            <Content>
-                <h3 className={styles.contentText}>
-                    {'Hair Stylist Studio'}
-                </h3>
-            </Content>
-            <Content>
-                <h3 className={styles.contentText}>
-                    {'Nails'}
-                </h3>
-            </Content>
-            <Content>
-                <h3 className={styles.contentText}>
-                    {'Jeweller'}
-                </h3>
+                <Bar/>
+                <LabelLink 
+                    title={'Taylor\'s Bridal Boutique – Wedding Dress Shop'}
+                    label={'Elmira'}
+                    link={'https://www.taylorsbridal.com/'}
+                />
+                <LabelLink 
+                    title={'Endo Jewellers – Jeweller'}
+                    label={'London'}
+                    link={'https://www.endojewellers.com/'}
+                />
             </Content>
         </>
     );

@@ -14,6 +14,7 @@ import { PartyTab } from './tabContents/partyTab';
 import { GalleryTab } from './tabContents/galleryTab';
 import { TransportationTab } from './tabContents/transportationTab';
 import { StagAndDoeTab } from './tabContents/stagAndDoeTab';
+import { VendorsTab } from './tabContents/vendorsTab';
 
 export const Tabs = () => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -114,6 +115,8 @@ export const Tabs = () => {
                 return <FaqTab/>
             case 'contact-us':
                 return <ContactUsTab/>
+            case 'vendors':
+                return <VendorsTab/>
             default: 
                 return <SaveTheDateTab/>
         }

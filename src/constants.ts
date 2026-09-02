@@ -11,7 +11,7 @@ export const configInitialState: Config = {
     rsvpEnabled: false,
     photoGalleryEnabled: true,
     stagAndDoeEnabled: false,
-    vendorsEnabled: false
+    vendorsEnabled: true
 }
 
 export const email = 'brooklynaiden2026@gmail.com';

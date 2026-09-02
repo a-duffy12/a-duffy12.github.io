@@ -8,6 +8,7 @@ import { Bar } from '../bar';
 import { QnA } from '../qna';
 import { ScheduleItem } from '../scheduleItem';
 import golfCourseDetourImage from '../../assets/images/golf_course_detour.jpg';
+import signingImage from '../../assets/images/signing.jpg';
 
 export const SaveTheDateTab = () => {
     const [ showCountdown, setShowCountdown ] = useState(true);
@@ -211,7 +212,15 @@ export const SaveTheDateTab = () => {
                         />
                     </Content>
                 </>
-                : <></>
+                : <>
+                    <Content>
+                        <img 
+                            className={styles.contentImageThreeToFour}
+                            src={signingImage}
+                            alt={'Aiden Duffy and Brooklyn Wright standing after signing their marriage license.'}
+                        />
+                    </Content>
+                </>
             }
         </>
     );
